@@ -15,8 +15,11 @@ namespace ArchiEugene.UI
 	    public void Init()
 	    {
 		    Object eventSystem = Object.FindObjectOfType(typeof(EventSystem));
-		    if (eventSystem == null)
-			    Managers.Resource.Instantiate("UI/EventSystem").name = "@EventSystem";
+		    if (ReferenceEquals(eventSystem, null))
+		    {
+			    eventSystem = Managers.Resource.Instantiate("UI/EventSystem");
+			    eventSystem.name = "@EventSystem";
+		    }
 		    Object.DontDestroyOnLoad(eventSystem);
 	    }
 
