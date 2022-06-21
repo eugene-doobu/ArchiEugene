@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Poolable : MonoBehaviour
+namespace ArchiEugene.Resources
 {
-	public bool IsUsing;
+	public class Poolable : MonoBehaviour
+	{
+		public bool IsUsing;
+	}
 }

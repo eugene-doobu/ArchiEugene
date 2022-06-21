@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Initializer
+namespace ArchiEugene
 {
-    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
-    static void AppInitialize()
+    public static class Initializer
     {
-        Managers.Init();
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+        static void AppInitialize()
+        {
+            Managers.Init();
+        }
     }
 }

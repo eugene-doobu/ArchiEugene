@@ -2,26 +2,32 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using ArchiEugene.Scene;
 
-public class SceneManagerEx
+namespace ArchiEugene.Scene
 {
-    public BaseScene CurrentScene { get { return GameObject.FindObjectOfType<BaseScene>(); } }
-
-	public void LoadScene(Define.Scene type)
+    public class SceneManagerEx
     {
-        Managers.Clear();
+        public BaseScene CurrentScene { get { return GameObject.FindObjectOfType<BaseScene>(); } }
 
-        SceneManager.LoadScene(GetSceneName(type));
-    }
+        public void LoadScene(Define.Scene type)
+        {
+            Managers.Clear();
 
-    string GetSceneName(Define.Scene type)
-    {
-        string name = System.Enum.GetName(typeof(Define.Scene), type);
-        return name;
-    }
+            SceneManager.LoadScene(GetSceneName(type));
+        }
 
-    public void Clear()
-    {
-        CurrentScene.Clear();
+        string GetSceneName(Define.Scene type)
+        {
+            string name = System.Enum.GetName(typeof(Define.Scene), type);
+            return name;
+        }
+
+        public void Clear()
+        {
+            CurrentScene.Clear();
+        }
     }
 }
+
+
