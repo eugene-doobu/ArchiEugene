@@ -28,7 +28,6 @@ public class Managers : MonoBehaviour
 
 	void Start()
     {
-        Init();
 	}
 
     void Update()
@@ -36,7 +35,7 @@ public class Managers : MonoBehaviour
 
     }
 
-    static void Init()
+    public static void Init()
     {
         if (s_instance == null)
         {
