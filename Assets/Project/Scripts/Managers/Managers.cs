@@ -4,6 +4,7 @@ using UnityEngine;
 using ArchiEugene.UI;
 using ArchiEugene.Resources;
 using ArchiEugene.Scene;
+using XRToolkit;
 
 namespace ArchiEugene
 {
@@ -16,19 +17,21 @@ namespace ArchiEugene
 		#endregion
 
 		#region Core
-		DataManager _data = new DataManager();
-	    PoolManager _pool = new PoolManager();
-	    ResourceManager _resource = new ResourceManager();
-	    SceneManagerEx _scene = new SceneManagerEx();
-	    SoundManager _sound = new SoundManager();
-	    UIManager _ui = new UIManager();
+		private DataManager _data = new DataManager();
+		private PoolManager _pool = new PoolManager();
+	    private ResourceManager _resource = new ResourceManager();
+	    private SceneManagerEx _scene = new SceneManagerEx();
+	    private SoundManager _sound = new SoundManager();
+	    private UIManager _ui = new UIManager();
+	    private XRManager _xr = new XRManager();
 
-	    public static DataManager Data { get { return Instance._data; } }
-	    public static PoolManager Pool { get { return Instance._pool; } }
-	    public static ResourceManager Resource { get { return Instance._resource; } }
-	    public static SceneManagerEx Scene { get { return Instance._scene; } }
-	    public static SoundManager Sound { get { return Instance._sound; } }
-	    public static UIManager UI { get { return Instance._ui; } }
+	    public static DataManager Data => Instance._data;
+	    public static PoolManager Pool => Instance._pool;
+	    public static ResourceManager Resource => Instance._resource;
+	    public static SceneManagerEx Scene => Instance._scene;
+	    public static SoundManager Sound => Instance._sound;
+	    public static UIManager UI => Instance._ui;
+	    public static XRManager XR => Instance._xr;
 		#endregion
 
 		void Start()
@@ -58,6 +61,7 @@ namespace ArchiEugene
 	            s_instance._pool.Init();
 	            s_instance._sound.Init();
 	            s_instance._ui.Init();
+	            s_instance._xr.Init();
 	        }		
 		}
 
