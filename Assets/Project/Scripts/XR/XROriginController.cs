@@ -12,37 +12,55 @@ namespace XRToolkit
     /// </summary>
     public class XROriginController : MonoBehaviour
     {
-        private readonly string _leftHandPath = "Camera Offset/LeftHand Controller";
-        private readonly string _rightHandPath = "Camera Offset/RightHand Controller";
-        
         private readonly string _handPresencePath = "Prefabs/XR";
         private readonly string _leftHandPresence = "Left Hand Presence";
         private readonly string _rightHandPresence = "Right Hand Presence";
         
-        private Transform _tr;
+        [Header("Controllers")]
+        [SerializeField] private XRController leftHand;
+        [SerializeField] private XRController rightHand;
         
-        public XRController _leftHand;
-        private XRController _rightHand;
+        [Header("LocoMotion")]
+        [SerializeField] private XRController leftTeleportRay;
+        [SerializeField] private XRController rightTeleportRay;
+        [SerializeField] private InputHelpers.Button teleportActivationButton;
+        [SerializeField] private float activationThreshold = 0.1f;
 
         private void Awake()
         {
-            _tr = GetComponent<Transform>();
-            InitHands();
+            InitControllers();
         }
 
-        private void InitHands()
+        private void Update()
         {
-            var leftHandTr = _tr.Find(_leftHandPath);
-            var rightHandTr = _tr.Find(_rightHandPath);
-            
-            if (ReferenceEquals(leftHandTr, null) || !leftHandTr.TryGetComponent(out _leftHand))
+            // TODO: Null 체크 방식 변경 예정 
+            if(leftTeleportRay != null)
+            {
+                leftTeleportRay.gameObject.SetActive(CheckIfActivated(leftTeleportRay));
+            }
+
+            if (rightTeleportRay != null)
+            {
+                rightTeleportRay.gameObject.SetActive(CheckIfActivated(rightTeleportRay));
+            }
+        }
+
+        private void InitControllers()
+        {
+            if (leftHand == null || !leftHand.transform.TryGetComponent(out leftHand))
                 Debug.LogError("[XRToolkit] LeftHand를 찾을 수 없습니다.");  
             
-            if (ReferenceEquals(rightHandTr, null) || !rightHandTr.TryGetComponent(out _rightHand))
+            if (rightHand == null || !rightHand.transform.TryGetComponent(out rightHand))
                 Debug.LogError("[XRToolkit] RightHand를 찾을 수 없습니다.");
 
-            _leftHand.modelPrefab = Managers.Resource.Load<Transform>($"{_handPresencePath}/{_leftHandPresence}");
-            _rightHand.modelPrefab = Managers.Resource.Load<Transform>($"{_handPresencePath}/{_rightHandPresence}");
+            leftHand.modelPrefab = Managers.Resource.Load<Transform>($"{_handPresencePath}/{_leftHandPresence}");
+            rightHand.modelPrefab = Managers.Resource.Load<Transform>($"{_handPresencePath}/{_rightHandPresence}");
+        }
+
+        private bool CheckIfActivated(XRController controller)
+        {
+            InputHelpers.IsPressed(controller.inputDevice, teleportActivationButton, out bool isActivated, activationThreshold);
+            return isActivated;
         }
     }
 }

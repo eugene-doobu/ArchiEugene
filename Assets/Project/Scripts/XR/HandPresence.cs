@@ -27,13 +27,10 @@ namespace XRToolkit
             {
                 _showController = value;
                 
-                if(!ReferenceEquals(_spawnedHandModel, null)) 
+                if(_spawnedHandModel != null) 
                     _spawnedHandModel.SetActive(!_showController);
-                if(!ReferenceEquals(_spawnedController, null)) 
+                if(_spawnedController != null) 
                     _spawnedController.SetActive(_showController);
-                
-                if (!_showController)
-                    UpdateHandAnimation();
             }
         }
 
@@ -50,6 +47,13 @@ namespace XRToolkit
         {
             if(!_targetDevice.isValid)
                 TryInitialize();
+            else
+                UpdateHandAnimation();
+        }
+
+        private void OnValidate()
+        {
+            ShowControllerInit();
         }
 
         private void TryInitialize()
@@ -82,6 +86,8 @@ namespace XRToolkit
 
         private void UpdateHandAnimation()
         {
+            if (_showController) return;
+            
             if(_targetDevice.TryGetFeatureValue(CommonUsages.trigger, out float triggerValue))
                 _handAnimator.SetFloat(Trigger, triggerValue);
             else
