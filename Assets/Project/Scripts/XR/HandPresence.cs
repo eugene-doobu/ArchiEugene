@@ -88,6 +88,7 @@ namespace XRToolkit
         {
             if (_showController) return;
             
+            // TODO: 관련기능 Input Manager로 이동 예정
             if(_targetDevice.TryGetFeatureValue(CommonUsages.trigger, out float triggerValue))
                 _handAnimator.SetFloat(Trigger, triggerValue);
             else
