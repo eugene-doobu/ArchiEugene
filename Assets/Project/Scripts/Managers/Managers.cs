@@ -4,7 +4,7 @@ using UnityEngine;
 using ArchiEugene.UI;
 using ArchiEugene.Resources;
 using ArchiEugene.Scene;
-using XRToolkit;
+using ArchiEugene.XRToolkit;
 
 namespace ArchiEugene
 {

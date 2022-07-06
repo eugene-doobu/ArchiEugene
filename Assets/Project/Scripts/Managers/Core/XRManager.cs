@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
-namespace XRToolkit
+namespace ArchiEugene.XRToolkit
 {
     public class XRManager
     {

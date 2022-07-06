@@ -7,7 +7,7 @@ using UnityEngine;
 using UnityEngine.XR;
 using UnityEngine.XR.Interaction.Toolkit;
 
-namespace XRToolkit
+namespace ArchiEugene.XRToolkit
 {
     /// <summary>
     /// XR Origin에 부착되어 XR 관련 기능들을 관리해주는 컨트롤러 스크립트

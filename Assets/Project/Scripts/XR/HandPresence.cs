@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
 
-namespace XRToolkit
+namespace ArchiEugene.XRToolkit
 {
     /// <summary>
     /// Hand에 사용할 모델과 컨트롤러를 지정해주는 스크립트
