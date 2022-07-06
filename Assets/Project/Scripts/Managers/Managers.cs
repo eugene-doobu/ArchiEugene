@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using ArchiEugene.Communication;
 using UnityEngine;
 using ArchiEugene.UI;
 using ArchiEugene.Resources;
@@ -14,6 +15,9 @@ namespace ArchiEugene
 	    static Managers Instance { get { Init(); return s_instance; } } // 유일한 매니저를 갖고온다
 
 		#region Contents
+		private CommunicationManager _communication = new CommunicationManager();
+
+		public static CommunicationManager Communication => Instance._communication;
 		#endregion
 
 		#region Core
@@ -62,6 +66,8 @@ namespace ArchiEugene
 	            s_instance._sound.Init();
 	            s_instance._ui.Init();
 	            s_instance._xr.Init();
+	            
+	            s_instance._communication.Init();
 	        }		
 		}
 

@@ -1,0 +1,102 @@
+{
+  "NpcData": [
+    {
+      "index": 0,
+      "name": "김강현",
+      "email": "khkim@knou.ac.kr",
+      "subject": [
+        "컴퓨터의이해",
+        "Visual C++프로그래밍",
+        "컴파일러구성",
+        "시뮬레이션"
+      ]
+    },
+    {
+      "index": 1,
+      "name": "손진곤",
+      "email": "jgshon@knou.ac.kr",
+      "subject": [
+        "컴퓨터의이해",
+        "이산수학 ",
+        "정보통신망",
+        "선형대수"
+      ]
+    },
+    {
+      "index": 2,
+      "name": "이병래",
+      "email": "brlee@knou.ac.kr",
+      "subject": [
+        "컴퓨터의이해",
+        "컴퓨터그래픽스",
+        "C++프로그래밍",
+        "인공지능"
+      ]
+    },
+    {
+      "index": 3,
+      "name": "김형근",
+      "email": "hgrikim@knou.ac.kr",
+      "subject": [
+        "C프로그래밍",
+        "디지털논리회로",
+        "멀티미디어시스템",
+        "컴퓨터구조"
+      ]
+    },
+    {
+      "index": 4,
+      "name": "이관용",
+      "email": "kylee@knou.ac.kr",
+      "subject": [
+        "HTML 웹프로그래밍",
+        "알고리즘",
+        "컴퓨터과학개론",
+        "머신러닝"
+      ]
+    },
+    {
+      "index": 5,
+      "name": "김희천",
+      "email": "hckim@knou.ac.kr",
+      "subject": [
+        "Java프로그래밍",
+        "소프트웨어공학",
+        "UNIX시스템",
+        "JSP프로그래밍"
+      ]
+    },
+    {
+      "index": 6,
+      "name": "정광식",
+      "email": "kchung0825@knou.ac.kr",
+      "subject": [
+        "유비쿼터스컴퓨팅개론",
+        "모바일앱프로그래밍",
+        "컴퓨터과학개론",
+        "자료구조"
+      ]
+    },
+    {
+      "index": 7,
+      "name": "정재화",
+      "email": "jaehwachung@knou.ac.kr",
+      "subject": [
+        "인터넷과 정보사회",
+        "데이터베이스시스템",
+        "클라우드컴퓨팅",
+        "파이썬프로그래밍"
+      ]
+    },
+    {
+      "index": 8,
+      "name": "김진욱",
+      "email": "Gnugi@knou.ac.kr",
+      "subject": [
+        "운영체제",
+        "컴퓨터보안",
+        "프로그래밍언어론"
+      ]
+    }
+  ]
+} 
