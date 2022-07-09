@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Define
 {
+    public static string PLAYER_TAG = "Player";
+    
     public enum Scene
     {
         Unknown,

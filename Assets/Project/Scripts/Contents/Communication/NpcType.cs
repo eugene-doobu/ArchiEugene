@@ -10,6 +10,7 @@ namespace ArchiEugene.Communication
         HCKIM,
         KCHUNG0825,
         JAEHWACHUNG,
-        GNUGI
+        GNUGI,
+        TEST
     }
 }

@@ -20,6 +20,7 @@ namespace ArchiEugene
         public Loader LoadJson<Loader, Key, Value>(string path) where Loader : ILoader<Key, Value>
         {
             TextAsset textAsset = Managers.Resource.Load<TextAsset>($"Data/{path}");
+            if (ReferenceEquals(textAsset, null)) return default;
             return JsonConvert.DeserializeObject<Loader>(textAsset.text);
         }
     }
