@@ -14,29 +14,37 @@ namespace ArchiEugene.Communication
     {
         private readonly string DEFAULT_AUDIO_NAME = "default";
         
-        [field: SerializeField] public NpcType NpcType;
+        [field: SerializeField] public NpcType NpcType { set; get; }
+        
         [SerializeField] private UI_Interaction interactionCanvas;
+        [SerializeField] private List<GameObject> _eventObject = new List<GameObject>();
 
         private Animator _animator;
-        [SerializeField] private List<GameObject> _eventObject = new List<GameObject>();
+        private int _currentTalkIndex = 0;
         
         public bool IsOnInteraction { get; private set; } = false;
 
+        private void Start()
+        {
+            if(interactionCanvas != null) interactionCanvas.SetNpc(NpcType);
+        }
+
         private void OnTriggerEnter(Collider other)
         {
-            if (!other.gameObject.CompareTag(Define.PLAYER_TAG)) return;
+            if (!other.gameObject.CompareTag(Define.TAG_PLAYER)) return;
             StartInteraction();
         }
 
         private void OnTriggerExit(Collider other)
         {
-            if (!other.gameObject.CompareTag(Define.PLAYER_TAG)) return;
+            if (!other.gameObject.CompareTag(Define.TAG_PLAYER)) return;
             EndInteraction();
         }
         
         public void StartInteraction()
         {
             if (interactionCanvas == null) return;
+            _currentTalkIndex = 0;
             IsOnInteraction = true;
             interactionCanvas.Enable();
         }
@@ -48,9 +56,33 @@ namespace ArchiEugene.Communication
             interactionCanvas.Disable();
         }
         
-        public void StartTalk()
+        public void TalkTrigger()
         {
-            
+            int talkContentLength = Managers.Communication.GetTalkContentLength(NpcType);
+            if (_currentTalkIndex >= talkContentLength)
+            {
+                EndTalk();
+                return;
+            }
+            if(_currentTalkIndex == 0) StartTalk();
+            TalkProcess();
+            _currentTalkIndex++;
+        }
+
+        private void StartTalk()
+        {
+            interactionCanvas.UINpcTalk.Enable();
+        }
+
+        private void TalkProcess()
+        {
+            interactionCanvas.StartTalkContent(GetTalkContent(_currentTalkIndex));
+        }
+
+        private void EndTalk()
+        {
+            _currentTalkIndex = 0;
+            interactionCanvas.UINpcTalk.Disable();
         }
 
         private string GetTalkContent(int index)
@@ -70,7 +102,6 @@ namespace ArchiEugene.Communication
         }
 
         #region Test
-
         [Header("Test")]
         [SerializeField] private int talkContentTestIndex = 0;
 
@@ -81,7 +112,6 @@ namespace ArchiEugene.Communication
                 Debug.Log($"[Communication] 'GetTalkContentTest' 메서드는 플레이중에 실행해주세요");
             Debug.Log(GetTalkContent(talkContentTestIndex));
         }
-
         #endregion Test
     }
 }

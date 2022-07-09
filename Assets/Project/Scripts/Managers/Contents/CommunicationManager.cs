@@ -15,6 +15,8 @@ namespace ArchiEugene.Communication
 
         public TalkContent GetTalkContent(NpcType type, int index) => _npcTalkContents[type]?[index];
 
+        public int GetTalkContentLength(NpcType type) => _npcTalkContents[type].Count;
+        
         public void Init()
         {
             InitNpcTypeToStringDict();
@@ -38,11 +40,6 @@ namespace ArchiEugene.Communication
                     continue;
                 }
                 _npcTalkContents[npcType] = talkContents;
-
-                foreach (var kvp in _npcTalkContents[npcType])
-                {
-                    Debug.LogWarning(kvp.Key + ", " + kvp.Value.talkContent);
-                }
             }
         }
     }

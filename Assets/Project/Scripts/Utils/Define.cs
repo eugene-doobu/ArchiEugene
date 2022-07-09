@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Define
 {
-    public static string PLAYER_TAG = "Player";
+    public static string TAG_PLAYER = "Player";
+
+    public static int LAYER_NPC = LayerMask.NameToLayer("NPC");
 
     public static int HASH_NPC_ANIMATION = Animator.StringToHash("Animation"); 
     
