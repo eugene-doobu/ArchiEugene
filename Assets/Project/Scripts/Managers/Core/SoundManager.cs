@@ -43,10 +43,13 @@ namespace ArchiEugene
 	        _audioClips.Clear();
 	    }
 
-	    public void Play(string path, Define.Sound type = Define.Sound.Effect, float pitch = 1.0f)
+	    public bool Play(string path, Define.Sound type = Define.Sound.Effect, float pitch = 1.0f)
 	    {
 	        AudioClip audioClip = GetOrAddAudioClip(path, type);
+	        if (ReferenceEquals(audioClip, null)) return false;
+	        
 	        Play(audioClip, type, pitch);
+	        return true;
 	    }
 
 		public void Play(AudioClip audioClip, Define.Sound type = Define.Sound.Effect, float pitch = 1.0f)
