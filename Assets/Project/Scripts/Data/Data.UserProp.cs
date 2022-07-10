@@ -12,11 +12,20 @@ namespace ArchiEugene.UserProp
         public int cost;
     }
 
+    /// <summary>
+    /// UserProp의 위치 정보를 저장
+    /// 각도는 오일러 각으로 저장
+    /// </summary>
     [Serializable]
     public class PropTransform
     {
-        public Vector3 position;
-        public Quaternion rotation;
+        public int propIndex;
+        public float positionX;
+        public float positionY;
+        public float positionZ;
+        public float rotationX;
+        public float rotationY;
+        public float rotationZ;
     }
     
     [Serializable]
