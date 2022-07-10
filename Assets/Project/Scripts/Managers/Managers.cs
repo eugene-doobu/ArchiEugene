@@ -5,6 +5,7 @@ using UnityEngine;
 using ArchiEugene.UI;
 using ArchiEugene.Resources;
 using ArchiEugene.Scene;
+using ArchiEugene.UserProp;
 using ArchiEugene.XRToolkit;
 
 namespace ArchiEugene
@@ -16,8 +17,10 @@ namespace ArchiEugene
 
 		#region Contents
 		private CommunicationManager _communication = new CommunicationManager();
+		private UserPropManager _userProp = new UserPropManager();
 
 		public static CommunicationManager Communication => Instance._communication;
+		public static UserPropManager UserProp => Instance._userProp;
 		#endregion
 
 		#region Core
@@ -68,6 +71,7 @@ namespace ArchiEugene
 	            s_instance._xr.Init();
 	            
 	            s_instance._communication.Init();
+	            s_instance._userProp.Init();
 	        }		
 		}
 

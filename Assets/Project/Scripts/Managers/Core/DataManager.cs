@@ -15,6 +15,7 @@ namespace ArchiEugene
     {
         public void Init()
         {
+            
         }
 
         public Loader LoadJson<Loader, Key, Value>(string path) where Loader : ILoader<Key, Value>

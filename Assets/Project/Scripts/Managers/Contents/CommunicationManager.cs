@@ -6,12 +6,12 @@ namespace ArchiEugene.Communication
 {
     public class CommunicationManager
     {
-        private Dictionary<NpcType, NpcInfo> _npcTypeToStringDict;
+        private Dictionary<NpcType, NpcInfo> _npcTypeDict;
         
         private readonly Dictionary<NpcType, Dictionary<int, TalkContent>> _npcTalkContents =
             new Dictionary<NpcType, Dictionary<int, TalkContent>>();
 
-        public NpcInfo GetNpcInfo(NpcType type) => _npcTypeToStringDict[type];
+        public NpcInfo GetNpcInfo(NpcType type) => _npcTypeDict[type];
 
         public TalkContent GetTalkContent(NpcType type, int index) => _npcTalkContents[type]?[index];
 
@@ -25,7 +25,7 @@ namespace ArchiEugene.Communication
 
         private void InitNpcTypeToStringDict()
         {
-            _npcTypeToStringDict = Managers.Data.LoadJson<NpcData, NpcType, NpcInfo>("NpcData").MakeDict();
+            _npcTypeDict = Managers.Data.LoadJson<NpcData, NpcType, NpcInfo>("NpcData").MakeDict();
         }
 
         private void InitNpcTalkContents()
