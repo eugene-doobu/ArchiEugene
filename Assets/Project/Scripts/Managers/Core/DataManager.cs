@@ -37,7 +37,17 @@ namespace ArchiEugene
             string text = File.ReadAllText(fullPath);
             if (text == string.Empty) return default;
             return JsonConvert.DeserializeObject<Loader>(text);
-        } 
+        }
+
+        public void SavePersistentJson<T>(T data, string path)
+        {
+            string fullPath = $"{Application.persistentDataPath}/Data/{path}.json";
+            bool hasData = File.Exists(fullPath);
+
+            string jsonData = JsonConvert.SerializeObject(data);
+            Debug.LogWarning(jsonData);
+            File.WriteAllText(fullPath,jsonData);
+        }
     }
 }
 

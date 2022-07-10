@@ -1,11 +1,16 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace ArchiEugene.UserProp
 {
     public class UserPropManager
     {
+        private readonly string PROP_JSON_NAME = "PropTransform";
+        
         private Dictionary<int, UserProp> _userPropDict = 
             new Dictionary<int, UserProp>();
 
@@ -26,13 +31,28 @@ namespace ArchiEugene.UserProp
 
         private void LoadUserPropTransformData()
         {
-            _propTransforms = Managers.Data.LoadPersistentJson<PropTransformData, int, PropTransform>("PropTransform").userProps;
+            _propTransforms = Managers.Data.LoadPersistentJson<PropTransformData, int, PropTransform>(PROP_JSON_NAME).userProps;
+        }
+
+        private void AddUserProp(UserPropMono userProp)
+        {
+            var propTransform = new PropTransform(
+                userProp.Index,
+                userProp.transform.position,
+                userProp.transform.rotation
+            );
+            _propTransforms.Add(propTransform);
         }
 
         private void InstantiateUserProps()
         {
             foreach (var propData in _propTransforms)
                 InstantiateUserProp(propData);
+        }
+
+        private void SaveUserPropData()
+        {
+            Managers.Data.SavePersistentJson(_propTransforms, PROP_JSON_NAME);
         }
 
         private void InstantiateUserProp(PropTransform propData)

@@ -26,6 +26,19 @@ namespace ArchiEugene.UserProp
         public float rotationX;
         public float rotationY;
         public float rotationZ;
+
+        public PropTransform(int index, Vector3 position, Quaternion rotation)
+        {
+            propIndex = index;
+            positionX = position.x;
+            positionY = position.y;
+            positionZ = position.z;
+
+            var eulerRotation = rotation.eulerAngles;
+            rotationX = eulerRotation.x;
+            rotationY = eulerRotation.y;
+            rotationZ = eulerRotation.z;
+        }
     }
     
     [Serializable]

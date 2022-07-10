@@ -6,6 +6,7 @@ namespace ArchiEugene.UserProp
 {
     public class UserPropMono : MonoBehaviour
     {
+        [field:SerializeField] public int Index { get; set; }
         [field:SerializeField] public string PropName { get; set; }
     }    
 }
