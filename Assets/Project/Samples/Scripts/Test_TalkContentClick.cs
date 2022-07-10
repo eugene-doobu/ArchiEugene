@@ -15,12 +15,8 @@ namespace ArchiEugene.Test
                 RaycastHit hit;
                 if(Physics.Raycast(ray, out hit, float.MaxValue, 1 << Define.LAYER_NPC))
                 {
-                    Debug.Log("Click NPC2");
                     if (hit.collider.TryGetComponent(out NpcController npcController))
-                    {
                         npcController.TalkTrigger();
-                        Debug.Log("Click NPC");
-                    }
                 }
             }
         }

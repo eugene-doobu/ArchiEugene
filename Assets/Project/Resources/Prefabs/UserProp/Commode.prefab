@@ -255,6 +255,7 @@ GameObject:
   - component: {fileID: 160175724052639084}
   - component: {fileID: 618220868992679021}
   - component: {fileID: 4103550477610016562}
+  - component: {fileID: 5264615120393018132}
   m_Layer: 9
   m_Name: Commode
   m_TagString: Untagged
@@ -365,6 +366,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 283837507764132653, guid: 5f7d56d8ee79e1641bef32f396e6fc24, type: 3}
+--- !u!114 &5264615120393018132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4845684640397915131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d55b3a7324afda148997fea00ed70fda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <PropName>k__BackingField: Commode
 --- !u!1 &6610352077898897196
 GameObject:
   m_ObjectHideFlags: 0

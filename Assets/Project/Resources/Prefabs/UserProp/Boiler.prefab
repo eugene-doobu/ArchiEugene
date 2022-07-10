@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 435882303344977756}
   - component: {fileID: 7859251663985261936}
   - component: {fileID: 7283664884555263654}
+  - component: {fileID: -2389886828654225164}
   m_Layer: 9
   m_Name: Boiler
   m_TagString: Untagged
@@ -121,6 +122,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 265656567921905302, guid: e0b39158ad1b4d140af55ff1e9a9af39, type: 3}
+--- !u!114 &-2389886828654225164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2175316314020877184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d55b3a7324afda148997fea00ed70fda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <PropName>k__BackingField: Boiler
 --- !u!1 &6215050897521088164
 GameObject:
   m_ObjectHideFlags: 0

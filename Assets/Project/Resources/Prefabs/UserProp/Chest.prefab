@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 839091047147515897}
   - component: {fileID: 2719241739367736645}
   - component: {fileID: 409402062364153658}
+  - component: {fileID: 8033621792548267022}
   m_Layer: 9
   m_Name: Chest
   m_TagString: Untagged
@@ -207,6 +208,19 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -69760931014144829, guid: 295d50c74a6cc1a44934832cee4e60b8, type: 3}
+--- !u!114 &8033621792548267022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1347951160253155591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d55b3a7324afda148997fea00ed70fda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <PropName>k__BackingField: Chest
 --- !u!1 &2844236015711315779
 GameObject:
   m_ObjectHideFlags: 0
