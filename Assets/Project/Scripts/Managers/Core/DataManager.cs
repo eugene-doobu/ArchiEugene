@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 using Newtonsoft.Json;
 using UnityEngine;
 
@@ -24,6 +26,18 @@ namespace ArchiEugene
             if (ReferenceEquals(textAsset, null)) return default;
             return JsonConvert.DeserializeObject<Loader>(textAsset.text);
         }
+
+        public Loader LoadPersistentJson<Loader, Key, Value>(string path) where Loader : ILoader<Key, Value>
+        {
+            string fullPath = $"{Application.persistentDataPath}/Data/{path}.json";
+
+            bool hasData = File.Exists(fullPath);
+            if (!hasData) return default;
+            
+            string text = File.ReadAllText(fullPath);
+            if (text == string.Empty) return default;
+            return JsonConvert.DeserializeObject<Loader>(text);
+        } 
     }
 }
 
