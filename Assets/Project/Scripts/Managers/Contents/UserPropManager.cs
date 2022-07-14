@@ -34,20 +34,10 @@ namespace ArchiEugene.UserProp
             _propTransforms = Managers.Data.LoadPersistentJson<PropTransformData, int, PropTransform>(PROP_JSON_NAME).userProps;
         }
 
-        private void AddUserProp(UserPropMono userProp)
-        {
-            var propTransform = new PropTransform(
-                userProp.Index,
-                userProp.transform.position,
-                userProp.transform.rotation
-            );
-            _propTransforms.Add(propTransform);
-        }
-
-        private void InstantiateUserProps()
+        private void InitUserProps()
         {
             foreach (var propData in _propTransforms)
-                InstantiateUserProp(propData);
+                InstantiateUserProp(propData, false);
         }
 
         private void SaveUserPropData()
@@ -55,18 +45,31 @@ namespace ArchiEugene.UserProp
             Managers.Data.SavePersistentJson(_propTransforms, PROP_JSON_NAME);
         }
 
-        private void InstantiateUserProp(PropTransform propData)
+        public GameObject InstantiateUserProp(int index, Vector3 position, Quaternion rotation)
+        {
+            var propTransform = new PropTransform(
+                index,
+                position,
+                rotation
+            );
+            return InstantiateUserProp(propTransform);
+        }
+
+        private GameObject InstantiateUserProp(PropTransform propData, bool addList = true)
         {
             var prop = Managers.Resource.Instantiate($"UserProp/{_userPropDict[propData.propIndex].name}");
             if (ReferenceEquals(prop, null))
             {
                 Debug.LogError($"[UserProp] 해당 Prop을 찾을 수 없습니다!");
-                return;
+                return null;
             }
             
             var position = new Vector3(propData.positionX, propData.positionY, propData.positionZ);
             var rotation = Quaternion.Euler(new Vector3(propData.rotationX, propData.rotationY, propData.rotationZ));
             prop.transform.SetPositionAndRotation(position, rotation);
+            if(addList) _propTransforms.Add(propData);
+
+            return prop;
         }
     }
 }

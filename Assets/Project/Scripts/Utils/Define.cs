@@ -7,6 +7,7 @@ public class Define
     public static string TAG_PLAYER = "Player";
 
     public static int LAYER_NPC = LayerMask.NameToLayer("NPC");
+    public static int LAYER_GROUND = LayerMask.NameToLayer("GROUND");
 
     public static int HASH_NPC_ANIMATION = Animator.StringToHash("Animation"); 
     
