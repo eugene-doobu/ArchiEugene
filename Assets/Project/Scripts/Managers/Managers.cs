@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using ArchiEugene.Communication;
 using UnityEngine;
@@ -48,6 +49,11 @@ namespace ArchiEugene
 	    void Update()
 	    {
 
+	    }
+
+	    private void OnDisable()
+	    {
+		    UserProp.Clear();
 	    }
 
 	    public static void Init()

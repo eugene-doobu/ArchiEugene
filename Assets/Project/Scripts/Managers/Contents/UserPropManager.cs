@@ -24,6 +24,12 @@ namespace ArchiEugene.UserProp
             LoadUserPropTransformData();
         }
 
+        public void Clear()
+        {
+            Debug.Log("Clear Test!!!");
+            SaveUserPropData();
+        }
+
         private void InitUserPropData()
         {
             _userPropDict = Managers.Data.LoadJson<UserPropData, int, UserProp>("UserProps").MakeDict();
