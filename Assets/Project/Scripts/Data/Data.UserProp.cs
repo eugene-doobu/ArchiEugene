@@ -75,5 +75,10 @@ namespace ArchiEugene.UserProp
             }
             return dict;
         }
+
+        public PropTransformData(List<PropTransform> userProps)
+        {
+            this.userProps = userProps;
+        }
     }
 }

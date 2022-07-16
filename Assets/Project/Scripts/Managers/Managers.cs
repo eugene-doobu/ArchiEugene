@@ -51,11 +51,6 @@ namespace ArchiEugene
 
 	    }
 
-	    private void OnDisable()
-	    {
-		    UserProp.Clear();
-	    }
-
 	    public static void Init()
 	    {
 	        if (s_instance == null)
@@ -87,6 +82,7 @@ namespace ArchiEugene
 	        Scene.Clear();
 	        UI.Clear();
 	        Pool.Clear();
+	        UserProp.Clear();
 	    }
 	}
 }

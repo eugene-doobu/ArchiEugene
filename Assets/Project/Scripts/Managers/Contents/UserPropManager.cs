@@ -14,7 +14,7 @@ namespace ArchiEugene.UserProp
         private Dictionary<int, UserProp> _userPropDict = 
             new Dictionary<int, UserProp>();
 
-        private List<PropTransform> _propTransforms;
+        private List<UserPropMono> _userPropMonos = new List<UserPropMono>();
 
         public UserProp GetUserPropData(int index) => _userPropDict[index];
 
@@ -26,7 +26,6 @@ namespace ArchiEugene.UserProp
 
         public void Clear()
         {
-            Debug.Log("Clear Test!!!");
             SaveUserPropData();
         }
 
@@ -37,18 +36,35 @@ namespace ArchiEugene.UserProp
 
         private void LoadUserPropTransformData()
         {
-            _propTransforms = Managers.Data.LoadPersistentJson<PropTransformData, int, PropTransform>(PROP_JSON_NAME).userProps;
-        }
+            var propTransforms = Managers.Data
+                .LoadPersistentJson<PropTransformData, int, PropTransform>(PROP_JSON_NAME)?
+                .userProps;
 
-        private void InitUserProps()
-        {
-            foreach (var propData in _propTransforms)
+            if (propTransforms == null) return;
+            foreach (var propData in propTransforms)
                 InstantiateUserProp(propData, false);
         }
 
         private void SaveUserPropData()
         {
-            Managers.Data.SavePersistentJson(_propTransforms, PROP_JSON_NAME);
+            var propTransformData = new PropTransformData(CalculatePropTransformData());
+            Managers.Data.SavePersistentJson(propTransformData, PROP_JSON_NAME);
+        }
+
+        private List<PropTransform> CalculatePropTransformData()
+        {
+            var transformData = new List<PropTransform>();
+            foreach (var propMono in _userPropMonos)
+            {
+                var propTransform = new PropTransform(
+                    propMono.Index,
+                    propMono.transform.position,
+                    propMono.transform.rotation
+                );
+                transformData.Add(propTransform);
+            }
+
+            return transformData.Count <= 0 ? null : transformData;
         }
 
         public GameObject InstantiateUserProp(int index, Vector3 position, Quaternion rotation)
@@ -73,7 +89,7 @@ namespace ArchiEugene.UserProp
             var position = new Vector3(propData.positionX, propData.positionY, propData.positionZ);
             var rotation = Quaternion.Euler(new Vector3(propData.rotationX, propData.rotationY, propData.rotationZ));
             prop.transform.SetPositionAndRotation(position, rotation);
-            if(addList) _propTransforms.Add(propData);
+            if(addList && prop.TryGetComponent(out UserPropMono propMono)) _userPropMonos.Add(propMono);
 
             return prop;
         }
