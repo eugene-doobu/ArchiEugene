@@ -1,0 +1,40 @@
+{
+  "UserProps": [
+    {
+      "name": "Well",
+      "cost": 50
+    },
+    {
+      "name": "Lamp",
+      "cost": 50
+    },
+    {
+      "name": "Chest",
+      "cost": 50
+    },
+    {
+      "name": "Commode",
+      "cost": 50
+    },
+    {
+      "name": "Chair",
+      "cost": 50
+    },
+    {
+      "name": "Box",
+      "cost": 50
+    },
+    {
+      "name": "Boiler",
+      "cost": 50
+    },
+    {
+      "name": "Bag",
+      "cost": 50
+    },
+    {
+      "name": "Anvil",
+      "cost": 50
+    }
+  ]
+} 

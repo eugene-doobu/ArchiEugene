@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using ArchiEugene.Communication;
 using UnityEngine;
 using ArchiEugene.UI;
 using ArchiEugene.Resources;
 using ArchiEugene.Scene;
-using XRToolkit;
+using ArchiEugene.UserProp;
+using ArchiEugene.XRToolkit;
 
 namespace ArchiEugene
 {
@@ -14,6 +16,11 @@ namespace ArchiEugene
 	    static Managers Instance { get { Init(); return s_instance; } } // 유일한 매니저를 갖고온다
 
 		#region Contents
+		private CommunicationManager _communication = new CommunicationManager();
+		private UserPropManager _userProp = new UserPropManager();
+
+		public static CommunicationManager Communication => Instance._communication;
+		public static UserPropManager UserProp => Instance._userProp;
 		#endregion
 
 		#region Core
@@ -62,6 +69,9 @@ namespace ArchiEugene
 	            s_instance._sound.Init();
 	            s_instance._ui.Init();
 	            s_instance._xr.Init();
+	            
+	            s_instance._communication.Init();
+	            s_instance._userProp.Init();
 	        }		
 		}
 

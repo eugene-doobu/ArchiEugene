@@ -8,7 +8,7 @@ namespace ArchiEugene.Scene
 {
     public class SceneManagerEx
     {
-        public BaseScene CurrentScene { get { return GameObject.FindObjectOfType<BaseScene>(); } }
+        public BaseScene CurrentScene => Object.FindObjectOfType<BaseScene>();
 
         public void LoadScene(Define.Scene type)
         {
@@ -27,6 +27,8 @@ namespace ArchiEugene.Scene
         {
             CurrentScene.Clear();
         }
+        
+        
     }
 }
 

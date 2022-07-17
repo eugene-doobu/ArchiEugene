@@ -19,6 +19,10 @@ Assets/Plugins/Editor/JetBrains*
 [Me]emoryCaptures/
 Assets/AssetStoreTools*
 
+
+UserSettings/*
+Assets/Project/Fonts/*
+
 # Visual Studio cache directory
 .vs/
 

@@ -1,0 +1,24 @@
+{
+  "TalkContents": [
+    {
+      "TalkContent": "Test0",
+      "Animation": 0,
+      "EventData": 0
+    },
+    {
+      "TalkContent": "Test1",
+      "Animation": 0,
+      "EventData": 0
+    },
+    {
+      "TalkContent": "Test2",
+      "Animation": 0,
+      "EventData": 0
+    },
+    {
+      "TalkContent": "Test3",
+      "Animation": 0,
+      "EventData": 0
+    }
+  ]
+} 

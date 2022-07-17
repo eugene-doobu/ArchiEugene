@@ -1,13 +1,9 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using ArchiEugene;
 using Unity.XR.CoreUtils;
 using UnityEngine;
 using UnityEngine.XR;
 using UnityEngine.XR.Interaction.Toolkit;
 
-namespace XRToolkit
+namespace ArchiEugene.XRToolkit
 {
     /// <summary>
     /// XR Origin에 부착되어 XR 관련 기능들을 관리해주는 컨트롤러 스크립트
@@ -22,11 +18,15 @@ namespace XRToolkit
         [SerializeField] private XRController leftHand;
         [SerializeField] private XRController rightHand;
         
-        [Header("LocoMotion")]
+        [Header("Teleport")]
         [SerializeField] private XRController leftTeleportRay;
         [SerializeField] private XRController rightTeleportRay;
         [SerializeField] private InputHelpers.Button teleportActivationButton;
         [SerializeField] private float activationThreshold = 0.1f;
+        
+        [Header("Interactor")]
+        [SerializeField] private XRRayInteractor leftInteractorRay;
+        [SerializeField] private XRRayInteractor rightInteractorRay;
 
         [Header("Movement")]
         [SerializeField] private float speed = 1;
@@ -42,6 +42,9 @@ namespace XRToolkit
 
         private Transform _tr;
         
+        public bool EnableLeftTeleport { get; set; } = true;
+        public bool EnableRightTeleport { get; set; } = true;
+        
         private void Awake()
         {
             InitControllers();
@@ -53,15 +56,16 @@ namespace XRToolkit
 
         private void Update()
         {
-            // TODO: Null 체크 방식 변경 예정 
-            if(leftTeleportRay != null)
+            if(leftTeleportRay)
             {
-                leftTeleportRay.gameObject.SetActive(CheckIfActivated(leftTeleportRay));
+                bool isLeftInteractorRayHovering = leftInteractorRay.TryGetHitInfo(out Vector3 pos, out Vector3 norm, out int index, out bool validTarget);
+                leftTeleportRay.gameObject.SetActive(EnableLeftTeleport && CheckIfActivated(leftTeleportRay) && !isLeftInteractorRayHovering);
             }
 
-            if (rightTeleportRay != null)
+            if (rightTeleportRay)
             {
-                rightTeleportRay.gameObject.SetActive(CheckIfActivated(rightTeleportRay));
+                bool isRightInteractorRayHovering = rightInteractorRay.TryGetHitInfo(out Vector3 pos, out Vector3 norm, out int index, out bool validTarget);
+                rightTeleportRay.gameObject.SetActive(EnableRightTeleport && CheckIfActivated(rightTeleportRay) && !isRightInteractorRayHovering);
             }
             
             // TODO: Input Manager로 분리 예정
@@ -102,7 +106,7 @@ namespace XRToolkit
 
         private bool CheckIfActivated(XRController controller)
         {
-            InputHelpers.IsPressed(controller.inputDevice, teleportActivationButton, out bool isActivated, activationThreshold);
+            controller.inputDevice.IsPressed(teleportActivationButton, out bool isActivated, activationThreshold);
             return isActivated;
         }
 
