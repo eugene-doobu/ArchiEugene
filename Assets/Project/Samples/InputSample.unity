@@ -251,6 +251,7 @@ GameObject:
   - component: {fileID: 985125781}
   - component: {fileID: 985125780}
   - component: {fileID: 985125779}
+  - component: {fileID: 985125783}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -335,6 +336,90 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &985125783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 985125778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38f6bf3d943ac7945842268c9ef1dca6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_InteractionManager: {fileID: 0}
+  m_Colliders: []
+  m_InteractionLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_InteractionLayers:
+    m_Bits: 1
+  m_SelectMode: 1
+  m_CustomReticle: {fileID: 0}
+  m_FirstHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_HoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_HoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FirstSelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Activated:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Deactivated:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnFirstHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnLastHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectCanceled:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnActivate:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnDeactivate:
+    m_PersistentCalls:
+      m_Calls: []
+  m_TeleportationProvider: {fileID: 0}
+  m_MatchOrientation: 0
+  m_TeleportTrigger: 0
+  m_Teleporting:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1962354698
 GameObject:
   m_ObjectHideFlags: 0
@@ -436,12 +521,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 481327877, guid: 43bf75c37ec5026488ca0e4a635b88e2, type: 3}
-      propertyPath: m_SelectActionTrigger
-      value: 1
+      propertyPath: m_InteractionLayers.m_Bits
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 481327878, guid: 43bf75c37ec5026488ca0e4a635b88e2, type: 3}
-      propertyPath: m_ModelPrefab
-      value: 
+    - target: {fileID: 1802156903, guid: 43bf75c37ec5026488ca0e4a635b88e2, type: 3}
+      propertyPath: m_InteractionLayers.m_Bits
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1378496708903929091, guid: 43bf75c37ec5026488ca0e4a635b88e2, type: 3}
       propertyPath: m_RootOrder
@@ -491,13 +576,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: XR Origin
       objectReference: {fileID: 0}
-    - target: {fileID: 3559024833480033180, guid: 43bf75c37ec5026488ca0e4a635b88e2, type: 3}
-      propertyPath: m_Materials.Array.data[0]
+    - target: {fileID: 1378496710218720683, guid: 43bf75c37ec5026488ca0e4a635b88e2, type: 3}
+      propertyPath: m_ModelPrefab
       value: 
-      objectReference: {fileID: 2100000, guid: 3d292eaf24ed97e4ba7c76381e7f53a5, type: 2}
-    - target: {fileID: 6447197579676012025, guid: 43bf75c37ec5026488ca0e4a635b88e2, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 3d292eaf24ed97e4ba7c76381e7f53a5, type: 2}
+      objectReference: {fileID: 3621981467535291324, guid: 779ae5d3cf44f65419517cdc7382484b, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43bf75c37ec5026488ca0e4a635b88e2, type: 3}
