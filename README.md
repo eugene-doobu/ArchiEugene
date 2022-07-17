@@ -17,3 +17,5 @@ Branch strategy: git-flow<br>
 ## Reference
 
 - [XR Interaction Toolkit](https://github.com/Unity-Technologies/XR-Interaction-Toolkit-Examples)
+- [PyAnimalese](https://github.com/hwi-middle/PyAnimalese)
+- [Punchkeyboard](https://github.com/rjth/Punchkeyboard)
