@@ -19,10 +19,16 @@ namespace ArchiEugene.Communication
         [SerializeField] private UI_Interaction interactionCanvas;
         [SerializeField] private List<GameObject> _eventObject = new List<GameObject>();
 
+        private bool _hasAnimator;
         private Animator _animator;
         private int _currentTalkIndex = 0;
         
         public bool IsOnInteraction { get; private set; } = false;
+
+        private void Awake()
+        {
+            _hasAnimator = TryGetComponent(out _animator);
+        }
 
         private void Start()
         {
@@ -93,8 +99,8 @@ namespace ArchiEugene.Communication
         {
             var talkContent = Managers.Communication.GetTalkContent(NpcType, index);
             
-            if(talkContent.animation != 0)
-                _animator.SetInteger(Define.HASH_NPC_ANIMATION, 0);
+            if(_hasAnimator && talkContent.animation != 0)
+                _animator.SetInteger(Define.HASH_NPC_ANIMATION, talkContent.animation);
 
             if (!Managers.Sound.Play($"TalkContent/{NpcType}/{index}"))
             {
