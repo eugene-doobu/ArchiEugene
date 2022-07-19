@@ -8,6 +8,7 @@ namespace ArchiEugene.Azure
     {
         public string storageAccount;
         public string accessKey;
+        public string userId;
         public string userPropContainer;
     }
     

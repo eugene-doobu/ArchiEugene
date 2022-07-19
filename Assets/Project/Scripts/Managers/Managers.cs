@@ -14,7 +14,7 @@ namespace ArchiEugene
 	public class Managers : MonoBehaviour
 	{
 	    static Managers s_instance; // 유일성이 보장된다
-	    static Managers Instance { get { Init(); return s_instance; } } // 유일한 매니저를 갖고온다
+	    public static Managers Instance { get { Init(); return s_instance; } } // 유일한 매니저를 갖고온다
 
 		#region Contents
 		private CommunicationManager _communication = new CommunicationManager();
