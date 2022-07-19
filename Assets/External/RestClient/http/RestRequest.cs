@@ -48,7 +48,9 @@ namespace RESTClient {
         Debug.LogWarning("Request body can only be set once");
         return;
       }
+#pragma warning disable CS0618
       Request.chunkedTransfer = isChunked;
+#pragma warning restore CS0618
       Request.uploadHandler = new UploadHandlerRaw(bytes);
       Request.uploadHandler.contentType = contentType;
     }

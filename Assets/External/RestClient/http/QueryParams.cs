@@ -26,8 +26,10 @@ namespace RESTClient {
       }
       StringBuilder sb = new StringBuilder("?");
       foreach (KeyValuePair<string, string> param in parameters) {
+#pragma warning disable CS0618
         string key = WWW.EscapeURL(param.Key);
         string value = WWW.EscapeURL(param.Value);
+#pragma warning restore CS0618
         sb.Append(key + "=" + value + "&");
       }
       sb.Remove(sb.Length - 1, 1);
