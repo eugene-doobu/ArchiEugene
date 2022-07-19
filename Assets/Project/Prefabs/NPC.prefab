@@ -4542,6 +4542,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7116084587313754084, guid: 7aa0c1d44f600da469e450d675162ff7, type: 3}
+      propertyPath: m_fontSize
+      value: 0.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 7116084587313754084, guid: 7aa0c1d44f600da469e450d675162ff7, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 0.14
+      objectReference: {fileID: 0}
     - target: {fileID: 8497880404175338482, guid: 7aa0c1d44f600da469e450d675162ff7, type: 3}
       propertyPath: m_Name
       value: Canvas_Interaction

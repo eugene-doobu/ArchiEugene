@@ -27,7 +27,9 @@ namespace ArchiEugene.Communication
         private void Start()
         {
             if(interactionCanvas != null) interactionCanvas.SetNpc(NpcType);
+            
             interactionCanvas.AddEventTalkTrigger(TalkTrigger);
+            
             interactionCanvas.Disable();
         }
 
@@ -73,7 +75,7 @@ namespace ArchiEugene.Communication
 
         private void StartTalk()
         {
-            interactionCanvas.UINpcTalk.Enable();
+            interactionCanvas.SetActiveNpcTalk(true);
         }
 
         private void TalkProcess()
@@ -84,7 +86,7 @@ namespace ArchiEugene.Communication
         private void EndTalk()
         {
             _currentTalkIndex = 0;
-            interactionCanvas.UINpcTalk.Disable();
+            interactionCanvas.SetActiveNpcTalk(false);
         }
 
         private string GetTalkContent(int index)
