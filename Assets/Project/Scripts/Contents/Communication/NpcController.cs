@@ -27,6 +27,8 @@ namespace ArchiEugene.Communication
         private void Start()
         {
             if(interactionCanvas != null) interactionCanvas.SetNpc(NpcType);
+            interactionCanvas.AddEventTalkTrigger(TalkTrigger);
+            interactionCanvas.Disable();
         }
 
         private void OnTriggerEnter(Collider other)
@@ -101,6 +103,7 @@ namespace ArchiEugene.Communication
             return talkContent.talkContent;
         }
 
+#if UNITY_EDITOR
         #region Test
         [Header("Test")]
         [SerializeField] private int talkContentTestIndex = 0;
@@ -113,5 +116,6 @@ namespace ArchiEugene.Communication
             Debug.Log(GetTalkContent(talkContentTestIndex));
         }
         #endregion Test
+#endif
     }
 }

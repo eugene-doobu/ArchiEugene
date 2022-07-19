@@ -23,6 +23,7 @@ namespace ArchiEugene.UI
             
             _textTalkText = Get<TMP_Text>((int) Texts.Text_TalkText);
             _textTalkText.text = "";
+            Disable();
         }
 
         public void Enable()
