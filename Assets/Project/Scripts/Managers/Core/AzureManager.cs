@@ -26,10 +26,32 @@ namespace ArchiEugene.Azure
             
             _client = StorageServiceClient.Create(_storageAccount, _accessKey);
             _blobService = _client.GetBlobService();
+
+            GetAzureData();
+        }
+
+        private void GetAzureData()
+        {
+            GetUserPropData();
         }
 
         private void GetUserPropData()
         {
+            if (_blobService == null || _userID == string.Empty) return;
+            string resourceFullPath = $"{_userPropContainer}/{_userID}/{Define.PROP_JSON_NAME}.json";
+
+            Managers.Instance.StartCoroutine(_blobService.GetTextBlob(GetUserPropDataComplete, resourceFullPath));
+        }
+
+        private void GetUserPropDataComplete(RestResponse response)
+        {
+            if (response.IsError)
+            {
+                Debug.Log($"{response.ErrorMessage} Error putting blob:{response.Content}");
+                return;
+            }
+            Managers.UserProp.InitUserPropData();
+            Debug.Log($"GetUserPropDataComplete\n---\n{response.Content}");
         }
 
         public void SaveUserData<T>(T data, string filename)

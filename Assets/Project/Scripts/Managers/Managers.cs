@@ -84,7 +84,6 @@ namespace ArchiEugene
 	    private static void ContentManagerInit()
 	    {
 		    s_instance._communication.Init();
-		    s_instance._userProp.Init();
 	    }
 	}
 }

@@ -16,15 +16,10 @@ namespace ArchiEugene.UserProp
 
         public UserProp GetUserPropData(int index) => _userPropDict[index];
 
-        public void Init()
-        {
-            InitUserPropData();
-            LoadUserPropTransformData();
-        }
-
-        private void InitUserPropData()
+        public void InitUserPropData()
         {
             _userPropDict = Managers.Data.LoadJson<UserPropData, int, UserProp>("UserProps").MakeDict();
+            LoadUserPropTransformData();
         }
 
         private void LoadUserPropTransformData()
