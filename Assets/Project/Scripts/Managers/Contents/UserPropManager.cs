@@ -9,8 +9,6 @@ namespace ArchiEugene.UserProp
 {
     public class UserPropManager
     {
-        private readonly string PROP_JSON_NAME = "PropTransform";
-        
         private Dictionary<int, UserProp> _userPropDict = 
             new Dictionary<int, UserProp>();
 
@@ -18,20 +16,15 @@ namespace ArchiEugene.UserProp
 
         public UserProp GetUserPropData(int index) => _userPropDict[index];
 
-        public void Init()
-        {
-            InitUserPropData();
-            LoadUserPropTransformData();
-        }
-
-        private void InitUserPropData()
+        public void InitUserPropData()
         {
             _userPropDict = Managers.Data.LoadJson<UserPropData, int, UserProp>("UserProps").MakeDict();
+            LoadUserPropTransformData();
         }
 
         private void LoadUserPropTransformData()
         {
-            _propTransforms = Managers.Data.LoadPersistentJson<PropTransformData, int, PropTransform>(PROP_JSON_NAME).userProps;
+            _propTransforms = Managers.Data.LoadPersistentJson<PropTransformData, int, PropTransform>(Define.PROP_JSON_NAME).userProps;
         }
 
         private void AddUserProp(UserPropMono userProp)
@@ -49,10 +42,10 @@ namespace ArchiEugene.UserProp
             foreach (var propData in _propTransforms)
                 InstantiateUserProp(propData);
         }
-
-        private void SaveUserPropData()
+        
+        public void SaveUserPropData()
         {
-            Managers.Data.SavePersistentJson(_propTransforms, PROP_JSON_NAME);
+            Managers.Azure.SaveUserData(_propTransforms, Define.PROP_JSON_NAME);
         }
 
         private void InstantiateUserProp(PropTransform propData)
