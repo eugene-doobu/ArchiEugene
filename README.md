@@ -19,3 +19,5 @@ Branch strategy: git-flow<br>
 - [XR Interaction Toolkit](https://github.com/Unity-Technologies/XR-Interaction-Toolkit-Examples)
 - [PyAnimalese](https://github.com/hwi-middle/PyAnimalese)
 - [PunchKeyboard-for-the-XR-Interaction-Toolkit](https://github.com/Gusinuhe/PunchKeyboard-for-the-XR-Interaction-Toolkit)
+- [RESTClient](https://github.com/Unity3dAzure/RESTClient)
+- [StorageServices](https://github.com/Unity3dAzure/StorageServices)
