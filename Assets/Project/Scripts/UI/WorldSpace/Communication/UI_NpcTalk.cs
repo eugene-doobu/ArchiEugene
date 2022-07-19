@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
@@ -17,12 +18,22 @@ namespace ArchiEugene.UI
         private TMP_Text _textTalkText;
         private Tween _tween;
         
+        public bool IsParentInitSuccess { get; set; }
+        
         public override void Init()
         {
             Bind<TMP_Text>(typeof(Texts));
             
             _textTalkText = Get<TMP_Text>((int) Texts.Text_TalkText);
             _textTalkText.text = "";
+            ParentInitChecker().Forget();
+        }
+
+        private async UniTask ParentInitChecker()
+        {
+            while (IsParentInitSuccess == false)
+                await UniTask.Yield();
+            Disable();
         }
 
         public void Enable()
