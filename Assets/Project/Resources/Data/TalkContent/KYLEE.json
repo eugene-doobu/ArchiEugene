@@ -1,23 +1,23 @@
 {
   "TalkContents": [
     {
-      "TalkContent": "Test0",
+      "TalkContent": "1972 03. 서울대학교 부설 한국방송통신대학 개교",
       "Animation": 0,
       "EventData": 0
     },
     {
-      "TalkContent": "Test1",
+      "TalkContent": "1982 12.전산통계학과 신설 (5년제 과정)",
       "Animation": 0,
       "EventData": 0
     },
     {
-      "TalkContent": "Test2",
+      "TalkContent": "2000 컴퓨터과학과로 학과명 변경",
       "Animation": 0,
       "EventData": 0
     },
     {
-      "TalkContent": "Test3",
-      "Animation": 0,
+      "TalkContent": "2001 08. 대학원 정보과학과 신설",
+      "Animation": 2,
       "EventData": 0
     }
   ]

@@ -1,22 +1,22 @@
 {
   "TalkContents": [
     {
-      "TalkContent": "Test0",
+      "TalkContent": "컴퓨터과학과는 새로운 차원의 컴퓨팅 지식과 능력을 익힐 수 있는 안내자, 급변하는 시대에 도전과 기회를 함께 찾아가는 동반자가 될 것입니다.",
       "Animation": 0,
       "EventData": 0
     },
     {
-      "TalkContent": "Test1",
+      "TalkContent": "지금 바로 컴퓨터과학과에 지원하세요.",
       "Animation": 0,
       "EventData": 0
     },
     {
-      "TalkContent": "Test2",
+      "TalkContent": "지금 여기는 한국방송통신대학교 컴퓨터과학과 입니다",
       "Animation": 0,
       "EventData": 0
     },
     {
-      "TalkContent": "Test3",
+      "TalkContent": "한국방송통신대학교",
       "Animation": 0,
       "EventData": 0
     }

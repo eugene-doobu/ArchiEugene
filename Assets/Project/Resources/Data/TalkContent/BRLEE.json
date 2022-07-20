@@ -1,22 +1,22 @@
 {
   "TalkContents": [
     {
-      "TalkContent": "Test0",
+      "TalkContent": "2000년에 개설된 한국방송통신대학교 컴퓨터과학과는",
       "Animation": 0,
       "EventData": 0
     },
     {
-      "TalkContent": "Test1",
+      "TalkContent": "2004년부터 20년간 새로운 산업혁명 시대에 지식과 능력을 갖춘 우수한 졸업생을 배출해 왔습니다.",
       "Animation": 0,
       "EventData": 0
     },
     {
-      "TalkContent": "Test2",
-      "Animation": 0,
+      "TalkContent": "그들의 배움에 대한 열정이 기술현장에서 긍정적인 결과를 만들어가고 있으며",
+      "Animation": 2,
       "EventData": 0
     },
     {
-      "TalkContent": "Test3",
+      "TalkContent": "이러한 컴퓨터과학과의 발전은 교수, 조교, 졸업생 등 학과 구성원들의 열정과 열의로 지속되고 있습니다.",
       "Animation": 0,
       "EventData": 0
     }

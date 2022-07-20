@@ -1,22 +1,22 @@
 {
   "TalkContents": [
     {
-      "TalkContent": "Test0",
+      "TalkContent": "지금 여기는 한국방송통신대학교 컴퓨터과학과 입니다.",
+      "Animation": 2,
+      "EventData": 0
+    },
+    {
+      "TalkContent": "데이터와 IT기술이 중심이 되는 새로운 산업혁명의 흐름 속에서, 우리의 생활과 컴퓨팅 기술의 융합은 점차 강화되고 있습니다.",
       "Animation": 0,
       "EventData": 0
     },
     {
-      "TalkContent": "Test1",
+      "TalkContent": "전 산업 분야에서 인공지능, 빅데이터, 데이터 과학 등 IT 기술기반의 과학적 의사결정 방법이 전통적 기술을 빠르게 대체하고 있으며",
       "Animation": 0,
       "EventData": 0
     },
     {
-      "TalkContent": "Test2",
-      "Animation": 0,
-      "EventData": 0
-    },
-    {
-      "TalkContent": "Test3",
+      "TalkContent": "이에 필요한 정보를 효과적으로 생산하고 응용할 수 있는 능력이 점차 중요해지고 있습니다.",
       "Animation": 0,
       "EventData": 0
     }
