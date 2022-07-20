@@ -1,22 +1,22 @@
 {
   "TalkContents": [
     {
-      "TalkContent": "Test0",
+      "TalkContent": "컴퓨터의이해 00231",
       "Animation": 0,
       "EventData": 0
     },
     {
-      "TalkContent": "Test1",
+      "TalkContent": "사진의이해  26174",
+      "Animation": 2,
+      "EventData": 0
+    },
+    {
+      "TalkContent": "인터넷과 정보사회  34101",
       "Animation": 0,
       "EventData": 0
     },
     {
-      "TalkContent": "Test2",
-      "Animation": 0,
-      "EventData": 0
-    },
-    {
-      "TalkContent": "Test3",
+      "TalkContent": "유비쿼터스컴퓨팅개론  34172",
       "Animation": 0,
       "EventData": 0
     }
