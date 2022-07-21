@@ -27,14 +27,15 @@ namespace ArchiEugene.UserProp
             _propTransforms = Managers.Data.LoadPersistentJson<PropTransformData, int, PropTransform>(Define.PROP_JSON_NAME).userProps;
         }
 
-        private void AddUserProp(UserPropMono userProp)
+        public GameObject AddUserProp(int index, Vector3 position, Quaternion rotation)
         {
-            var propTransform = new PropTransform(
-                userProp.Index,
-                userProp.transform.position,
-                userProp.transform.rotation
-            );
-            _propTransforms.Add(propTransform);
+            return AddUserProp(new PropTransform(index, position, rotation));
+        }
+
+        public GameObject AddUserProp(PropTransform userPropData)
+        {
+            _propTransforms.Add(userPropData);
+            return InstantiateUserProp(userPropData);
         }
 
         private void InstantiateUserProps()
@@ -48,18 +49,19 @@ namespace ArchiEugene.UserProp
             Managers.Azure.SaveUserData(_propTransforms, Define.PROP_JSON_NAME);
         }
 
-        private void InstantiateUserProp(PropTransform propData)
+        private GameObject InstantiateUserProp(PropTransform propData)
         {
             var prop = Managers.Resource.Instantiate($"UserProp/{_userPropDict[propData.propIndex].name}");
             if (ReferenceEquals(prop, null))
             {
                 Debug.LogError($"[UserProp] 해당 Prop을 찾을 수 없습니다!");
-                return;
+                return null;
             }
             
             var position = new Vector3(propData.positionX, propData.positionY, propData.positionZ);
             var rotation = Quaternion.Euler(new Vector3(propData.rotationX, propData.rotationY, propData.rotationZ));
             prop.transform.SetPositionAndRotation(position, rotation);
+            return prop;
         }
     }
 }

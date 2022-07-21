@@ -70,7 +70,6 @@ namespace ArchiEugene
 	        Scene.Clear();
 	        UI.Clear();
 	        Pool.Clear();
-	        UserProp.Clear();
 	    }
 
 	    private static void CoreManagerInit()

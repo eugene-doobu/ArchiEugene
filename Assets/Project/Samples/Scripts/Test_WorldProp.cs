@@ -33,7 +33,7 @@ namespace ArchiEugene.Test
         private GameObject AddWorldProp(Vector3 position)
         {
             var index = int.Parse(_inputField.text) % 9;
-            return Managers.UserProp.InstantiateUserProp(index, position ,Quaternion.identity);
+            return Managers.UserProp.AddUserProp(index, position ,Quaternion.identity);
         }
     }
 }
