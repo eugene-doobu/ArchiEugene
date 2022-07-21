@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using ArchiEugene.Azure;
 using ArchiEugene.Communication;
 using UnityEngine;
 using ArchiEugene.UI;
@@ -14,7 +15,7 @@ namespace ArchiEugene
 	public class Managers : MonoBehaviour
 	{
 	    static Managers s_instance; // 유일성이 보장된다
-	    static Managers Instance { get { Init(); return s_instance; } } // 유일한 매니저를 갖고온다
+	    public static Managers Instance { get { Init(); return s_instance; } } // 유일한 매니저를 갖고온다
 
 		#region Contents
 		private CommunicationManager _communication = new CommunicationManager();
@@ -32,6 +33,7 @@ namespace ArchiEugene
 	    private SoundManager _sound = new SoundManager();
 	    private UIManager _ui = new UIManager();
 	    private XRManager _xr = new XRManager();
+	    private AzureManager _azure = new AzureManager();
 
 	    public static DataManager Data => Instance._data;
 	    public static PoolManager Pool => Instance._pool;
@@ -40,16 +42,8 @@ namespace ArchiEugene
 	    public static SoundManager Sound => Instance._sound;
 	    public static UIManager UI => Instance._ui;
 	    public static XRManager XR => Instance._xr;
+	    public static AzureManager Azure = Instance._azure;
 		#endregion
-
-		void Start()
-	    {
-		}
-
-	    void Update()
-	    {
-
-	    }
 
 	    public static void Init()
 	    {
@@ -64,15 +58,9 @@ namespace ArchiEugene
 
 	            DontDestroyOnLoad(go);
 	            s_instance = go.GetComponent<Managers>();
-
-	            s_instance._data.Init();
-	            s_instance._pool.Init();
-	            s_instance._sound.Init();
-	            s_instance._ui.Init();
-	            s_instance._xr.Init();
 	            
-	            s_instance._communication.Init();
-	            s_instance._userProp.Init();
+	            CoreManagerInit();
+	            ContentManagerInit();
 	        }		
 		}
 
@@ -83,6 +71,21 @@ namespace ArchiEugene
 	        UI.Clear();
 	        Pool.Clear();
 	        UserProp.Clear();
+	    }
+
+	    private static void CoreManagerInit()
+	    {
+		    s_instance._data.Init();
+		    s_instance._pool.Init();
+		    s_instance._sound.Init();
+		    s_instance._ui.Init();
+		    s_instance._xr.Init();
+		    s_instance._azure.Init();
+	    }
+
+	    private static void ContentManagerInit()
+	    {
+		    s_instance._communication.Init();
 	    }
 	}
 }

@@ -19,14 +19,24 @@ namespace ArchiEugene.Communication
         [SerializeField] private UI_Interaction interactionCanvas;
         [SerializeField] private List<GameObject> _eventObject = new List<GameObject>();
 
+        private bool _hasAnimator;
         private Animator _animator;
         private int _currentTalkIndex = 0;
         
         public bool IsOnInteraction { get; private set; } = false;
 
+        private void Awake()
+        {
+            _hasAnimator = TryGetComponent(out _animator);
+        }
+
         private void Start()
         {
             if(interactionCanvas != null) interactionCanvas.SetNpc(NpcType);
+            
+            interactionCanvas.AddEventTalkTrigger(TalkTrigger);
+            
+            interactionCanvas.Disable();
         }
 
         private void OnTriggerEnter(Collider other)
@@ -71,7 +81,7 @@ namespace ArchiEugene.Communication
 
         private void StartTalk()
         {
-            interactionCanvas.UINpcTalk.Enable();
+            interactionCanvas.SetActiveNpcTalk(true);
         }
 
         private void TalkProcess()
@@ -82,15 +92,15 @@ namespace ArchiEugene.Communication
         private void EndTalk()
         {
             _currentTalkIndex = 0;
-            interactionCanvas.UINpcTalk.Disable();
+            interactionCanvas.SetActiveNpcTalk(false);
         }
 
         private string GetTalkContent(int index)
         {
             var talkContent = Managers.Communication.GetTalkContent(NpcType, index);
             
-            if(talkContent.animation != 0)
-                _animator.SetInteger(Define.HASH_NPC_ANIMATION, 0);
+            if(_hasAnimator && talkContent.animation != 0)
+                _animator.SetInteger(Define.HASH_NPC_ANIMATION, talkContent.animation);
 
             if (!Managers.Sound.Play($"TalkContent/{NpcType}/{index}"))
             {
@@ -101,6 +111,7 @@ namespace ArchiEugene.Communication
             return talkContent.talkContent;
         }
 
+#if UNITY_EDITOR
         #region Test
         [Header("Test")]
         [SerializeField] private int talkContentTestIndex = 0;
@@ -113,5 +124,6 @@ namespace ArchiEugene.Communication
             Debug.Log(GetTalkContent(talkContentTestIndex));
         }
         #endregion Test
+#endif
     }
 }

@@ -1,22 +1,22 @@
 {
   "TalkContents": [
     {
-      "TalkContent": "Test0",
+      "TalkContent": "21세기 첨단 기술시대에 고도정보화 사회를 선도",
+      "Animation": 2,
+      "EventData": 0
+    },
+    {
+      "TalkContent": "21세기 첨단 기술시대에 고도정보화 사회를 선도하는 컴퓨터과학은 인간활동에 기초가 되는 모든 정보처리에 대하여 연구하는 첨단 학문으로서,",
       "Animation": 0,
       "EventData": 0
     },
     {
-      "TalkContent": "Test1",
-      "Animation": 0,
+      "TalkContent": "정보의 관리 저장 전송 등에 관한 연구와 관련하여 컴퓨터의 본질과 응용에 대한 근본적인 문제를 다루고 있습니다.",
+      "Animation": 2,
       "EventData": 0
     },
     {
-      "TalkContent": "Test2",
-      "Animation": 0,
-      "EventData": 0
-    },
-    {
-      "TalkContent": "Test3",
+      "TalkContent": "모든 인간활동이 정보에 근거하여 이루어지는 것을 볼 때, 정보의 양과 질의 향상을 목표로 하는 컴퓨터과학은 국제경쟁 뿐 아니라 전 인류복지향상을 위해서도 그 중요성이 증대되고 있습니다.",
       "Animation": 0,
       "EventData": 0
     }

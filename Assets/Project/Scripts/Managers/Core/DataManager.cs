@@ -39,6 +39,7 @@ namespace ArchiEugene
             return JsonConvert.DeserializeObject<TLoader>(text);
         }
 
+        [Obsolete("Azure Storage를 사용해주세요")]
         public void SavePersistentJson<T>(T data, string path)
         {
             string fullPath = $"{Application.persistentDataPath}/Data/{path}.json";

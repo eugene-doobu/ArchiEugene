@@ -1,22 +1,22 @@
 {
   "TalkContents": [
     {
-      "TalkContent": "Test0",
+      "TalkContent": "컴퓨터의이해 원격대학교육의이해 사진의이해 인터넷과 정보사회 유비쿼터스컴퓨팅개론 C프로그래밍 데이터정보처리입문",
       "Animation": 0,
       "EventData": 0
     },
     {
-      "TalkContent": "Test1",
+      "TalkContent": "한국사의이해 생명과환경 원격대학교육의이해 이산수학 Java프로그래밍 Visual C++프로그래밍 세상읽기와논술",
+      "Animation": 2,
+      "EventData": 0
+    },
+    {
+      "TalkContent": "원격대학교육의이해 그래픽커뮤니케이션 HTML 웹프로그래밍 데이터베이스시스템 디지털논리회로 운영체제 알고리즘",
       "Animation": 0,
       "EventData": 0
     },
     {
-      "TalkContent": "Test2",
-      "Animation": 0,
-      "EventData": 0
-    },
-    {
-      "TalkContent": "Test3",
+      "TalkContent": "원격대학교육의이해 컴퓨터그래픽스 모바일앱프로그래밍 컴퓨터보안 소프트웨어공학 정보통신망 생활과건강",
       "Animation": 0,
       "EventData": 0
     }

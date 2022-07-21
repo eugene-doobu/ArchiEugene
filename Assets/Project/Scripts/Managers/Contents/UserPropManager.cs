@@ -9,89 +9,57 @@ namespace ArchiEugene.UserProp
 {
     public class UserPropManager
     {
-        private readonly string PROP_JSON_NAME = "PropTransform";
-        
         private Dictionary<int, UserProp> _userPropDict = 
             new Dictionary<int, UserProp>();
 
-        private List<UserPropMono> _userPropMonos = new List<UserPropMono>();
+        private List<PropTransform> _propTransforms;
 
         public UserProp GetUserPropData(int index) => _userPropDict[index];
 
-        public void Init()
-        {
-            InitUserPropData();
-            LoadUserPropTransformData();
-        }
-
-        public void Clear()
-        {
-            SaveUserPropData();
-        }
-
-        private void InitUserPropData()
+        public void InitUserPropData()
         {
             _userPropDict = Managers.Data.LoadJson<UserPropData, int, UserProp>("UserProps").MakeDict();
+            LoadUserPropTransformData();
         }
 
         private void LoadUserPropTransformData()
         {
-            var propTransforms = Managers.Data
-                .LoadPersistentJson<PropTransformData, int, PropTransform>(PROP_JSON_NAME)?
-                .userProps;
-
-            if (propTransforms == null) return;
-            foreach (var propData in propTransforms)
-                InstantiateUserProp(propData, false);
+            _propTransforms = Managers.Data.LoadPersistentJson<PropTransformData, int, PropTransform>(Define.PROP_JSON_NAME).userProps;
         }
 
-        private void SaveUserPropData()
-        {
-            var propTransformData = new PropTransformData(CalculatePropTransformData());
-            Managers.Data.SavePersistentJson(propTransformData, PROP_JSON_NAME);
-        }
-
-        private List<PropTransform> CalculatePropTransformData()
-        {
-            var transformData = new List<PropTransform>();
-            foreach (var propMono in _userPropMonos)
-            {
-                var propTransform = new PropTransform(
-                    propMono.Index,
-                    propMono.transform.position,
-                    propMono.transform.rotation
-                );
-                transformData.Add(propTransform);
-            }
-
-            return transformData.Count <= 0 ? null : transformData;
-        }
-
-        public GameObject InstantiateUserProp(int index, Vector3 position, Quaternion rotation)
+        private void AddUserProp(UserPropMono userProp)
         {
             var propTransform = new PropTransform(
-                index,
-                position,
-                rotation
+                userProp.Index,
+                userProp.transform.position,
+                userProp.transform.rotation
             );
-            return InstantiateUserProp(propTransform);
+            _propTransforms.Add(propTransform);
         }
 
-        private GameObject InstantiateUserProp(PropTransform propData, bool addList = true)
+        private void InstantiateUserProps()
+        {
+            foreach (var propData in _propTransforms)
+                InstantiateUserProp(propData);
+        }
+        
+        public void SaveUserPropData()
+        {
+            Managers.Azure.SaveUserData(_propTransforms, Define.PROP_JSON_NAME);
+        }
+
+        private void InstantiateUserProp(PropTransform propData)
         {
             var prop = Managers.Resource.Instantiate($"UserProp/{_userPropDict[propData.propIndex].name}");
             if (ReferenceEquals(prop, null))
             {
                 Debug.LogError($"[UserProp] 해당 Prop을 찾을 수 없습니다!");
-                return null;
+                return;
             }
             
             var position = new Vector3(propData.positionX, propData.positionY, propData.positionZ);
             var rotation = Quaternion.Euler(new Vector3(propData.rotationX, propData.rotationY, propData.rotationZ));
             prop.transform.SetPositionAndRotation(position, rotation);
-            if(addList && prop.TryGetComponent(out UserPropMono propMono)) _userPropMonos.Add(propMono);
-
-            return prop;
         }
     }
 }

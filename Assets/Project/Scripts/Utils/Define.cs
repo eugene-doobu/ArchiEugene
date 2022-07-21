@@ -11,12 +11,13 @@ public class Define
 
     public static int HASH_NPC_ANIMATION = Animator.StringToHash("Animation"); 
     
+    public static readonly string PROP_JSON_NAME = "PropTransform";
+    
     public enum Scene
     {
         Unknown,
-        Login,
-        Lobby,
-        Game,
+        LoginScene,
+        WorldScene,
     }
 
     public enum Sound

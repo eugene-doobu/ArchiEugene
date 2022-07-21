@@ -1,22 +1,22 @@
 {
   "TalkContents": [
     {
-      "TalkContent": "Test0",
+      "TalkContent": "\n대학영어 심리학에게묻다 원격대학교육의이해 대중영화의이해 C++프로그래밍 컴퓨터과학 개론 멀티미디어시스템",
       "Animation": 0,
       "EventData": 0
     },
     {
-      "TalkContent": "Test1",
+      "TalkContent": "철학의이해 대학수학의이해 원격대학교육의이해 자료구조 선형대수 프로그래밍언어론 생활속의경제",
       "Animation": 0,
       "EventData": 0
     },
     {
-      "TalkContent": "Test2",
-      "Animation": 0,
+      "TalkContent": "원격대학교육의이해 생활법률 컴퓨터구조 JSP프로그래밍 UNIX시스템 시뮬레이션 컴파일러구성",
+      "Animation": 2,
       "EventData": 0
     },
     {
-      "TalkContent": "Test3",
+      "TalkContent": "원격대학교육의이해 경영전략론 클라우드컴퓨팅 머신러닝 인공지능 빅데이터의이해와활용 성,사랑,사회",
       "Animation": 0,
       "EventData": 0
     }

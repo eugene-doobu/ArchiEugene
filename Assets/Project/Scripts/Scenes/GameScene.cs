@@ -9,7 +9,7 @@ namespace ArchiEugene.Scene
         protected override void Init()
         {
             base.Init();
-            SceneType = Define.Scene.Game;
+            SceneType = Define.Scene.WorldScene;
         }
 
         public override void Clear()
