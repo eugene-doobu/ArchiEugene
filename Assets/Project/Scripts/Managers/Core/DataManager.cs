@@ -39,6 +39,11 @@ namespace ArchiEugene
             return JsonConvert.DeserializeObject<TLoader>(text);
         }
 
+        public TLoader LoadString<TLoader, TKey, TValue>(string content) where TLoader : ILoader<TKey, TValue>
+        {
+            return JsonConvert.DeserializeObject<TLoader>(content);
+        }
+
         [Obsolete("Azure Storage를 사용해주세요")]
         public void SavePersistentJson<T>(T data, string path)
         {

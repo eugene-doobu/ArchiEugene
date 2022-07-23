@@ -16,15 +16,24 @@ namespace ArchiEugene.UserProp
 
         public UserProp GetUserPropData(int index) => _userPropDict[index];
 
-        public void InitUserPropData()
+        private bool _isInitData;
+
+        public void InitUserPropData(string content)
         {
             _userPropDict = Managers.Data.LoadJson<UserPropData, int, UserProp>("UserProps").MakeDict();
-            LoadUserPropTransformData();
+            LoadUserPropTransformData(content);
+            _isInitData = true;
         }
 
-        private void LoadUserPropTransformData()
+        private void LoadUserPropTransformData(string content)
         {
-            _propTransforms = Managers.Data.LoadPersistentJson<PropTransformData, int, PropTransform>(Define.PROP_JSON_NAME).userProps;
+            if (content == string.Empty)
+            {
+                _propTransforms = new List<PropTransform>();
+                return;
+            }
+            _propTransforms = Managers.Data.LoadString<PropTransformData, int, PropTransform>(content)?.userProps 
+                              ?? new List<PropTransform>();
         }
 
         public GameObject AddUserProp(int index, Vector3 position, Quaternion rotation)
@@ -38,15 +47,18 @@ namespace ArchiEugene.UserProp
             return InstantiateUserProp(userPropData);
         }
 
-        private void InstantiateUserProps()
+        public async UniTask InstantiateUserProps()
         {
+            while (!_isInitData)
+                await UniTask.Yield();
+            
             foreach (var propData in _propTransforms)
                 InstantiateUserProp(propData);
         }
         
         public void SaveUserPropData()
         {
-            Managers.Azure.SaveUserData(_propTransforms, Define.PROP_JSON_NAME);
+            Managers.Azure.SaveUserData(new PropTransformData(_propTransforms), Define.PROP_JSON_NAME);
         }
 
         private GameObject InstantiateUserProp(PropTransform propData)

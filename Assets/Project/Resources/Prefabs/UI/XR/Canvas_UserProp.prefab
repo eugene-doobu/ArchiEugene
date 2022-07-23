@@ -78,7 +78,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Grid Menu
+  m_Text: UserProp
 --- !u!1 &2200671143141418693
 GameObject:
   m_ObjectHideFlags: 0
@@ -110,7 +110,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2200671143141418693}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children:
@@ -118,7 +118,7 @@ RectTransform:
   - {fileID: 2130422829105005469}
   m_Father: {fileID: 2205952644840527457}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -406,16 +406,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8374056469137327305, guid: 50372065439595146b02ce2b411b2b37, type: 3}
       propertyPath: m_Name
-      value: VRUI-Button_Grid (3)
+      value: Button_Commode
       objectReference: {fileID: 0}
     - target: {fileID: 8478040190041550151, guid: 50372065439595146b02ce2b411b2b37, type: 3}
       propertyPath: m_Text
-      value: Settings
+      value: Commode
       objectReference: {fileID: 0}
     - target: {fileID: 8478138580996785433, guid: 50372065439595146b02ce2b411b2b37, type: 3}
       propertyPath: m_Texture
       value: 
-      objectReference: {fileID: 2800000, guid: 1be97b8c18e9987418fa0581a471e37f, type: 3}
+      objectReference: {fileID: 2800000, guid: 8c040f86f02308b4fae6c921f505b364, type: 3}
     - target: {fileID: 8587414299095368545, guid: 50372065439595146b02ce2b411b2b37, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -516,16 +516,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8374056469137327305, guid: 50372065439595146b02ce2b411b2b37, type: 3}
       propertyPath: m_Name
-      value: VRUI-Button_Grid (4)
+      value: Button_Chair
       objectReference: {fileID: 0}
     - target: {fileID: 8478040190041550151, guid: 50372065439595146b02ce2b411b2b37, type: 3}
       propertyPath: m_Text
-      value: Search
+      value: Chair
       objectReference: {fileID: 0}
     - target: {fileID: 8478138580996785433, guid: 50372065439595146b02ce2b411b2b37, type: 3}
       propertyPath: m_Texture
       value: 
-      objectReference: {fileID: 2800000, guid: 986adfd827b83984c94ace605b5eb15b, type: 3}
+      objectReference: {fileID: 2800000, guid: 167417864dd104a4ab9fa60ecd4f1277, type: 3}
     - target: {fileID: 8587414299095368545, guid: 50372065439595146b02ce2b411b2b37, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -626,16 +626,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8374056469137327305, guid: 50372065439595146b02ce2b411b2b37, type: 3}
       propertyPath: m_Name
-      value: VRUI-Button_Grid (1)
+      value: Button_Lamp
       objectReference: {fileID: 0}
     - target: {fileID: 8478040190041550151, guid: 50372065439595146b02ce2b411b2b37, type: 3}
       propertyPath: m_Text
-      value: Library
+      value: Lamp
       objectReference: {fileID: 0}
     - target: {fileID: 8478138580996785433, guid: 50372065439595146b02ce2b411b2b37, type: 3}
       propertyPath: m_Texture
       value: 
-      objectReference: {fileID: 2800000, guid: c21b90f6e2346944d9ee0d9cb55f158e, type: 3}
+      objectReference: {fileID: 2800000, guid: 622b623f3b781a04f93a8f3bb451f7b0, type: 3}
     - target: {fileID: 8587414299095368545, guid: 50372065439595146b02ce2b411b2b37, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -736,16 +736,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8374056469137327305, guid: 50372065439595146b02ce2b411b2b37, type: 3}
       propertyPath: m_Name
-      value: VRUI-Button_Grid (6)
+      value: Button_Boiler
       objectReference: {fileID: 0}
     - target: {fileID: 8478040190041550151, guid: 50372065439595146b02ce2b411b2b37, type: 3}
       propertyPath: m_Text
-      value: Apps
+      value: Boiler
       objectReference: {fileID: 0}
     - target: {fileID: 8478138580996785433, guid: 50372065439595146b02ce2b411b2b37, type: 3}
       propertyPath: m_Texture
       value: 
-      objectReference: {fileID: 2800000, guid: 996181a51e22d804b96fd8f44fbbc390, type: 3}
+      objectReference: {fileID: 2800000, guid: a75e94a0d21895c48a60a91d0735535d, type: 3}
     - target: {fileID: 8587414299095368545, guid: 50372065439595146b02ce2b411b2b37, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -846,16 +846,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8374056469137327305, guid: 50372065439595146b02ce2b411b2b37, type: 3}
       propertyPath: m_Name
-      value: VRUI-Button_Grid (7)
+      value: Button_Bag
       objectReference: {fileID: 0}
     - target: {fileID: 8478040190041550151, guid: 50372065439595146b02ce2b411b2b37, type: 3}
       propertyPath: m_Text
-      value: Logout
+      value: Bag
       objectReference: {fileID: 0}
     - target: {fileID: 8478138580996785433, guid: 50372065439595146b02ce2b411b2b37, type: 3}
       propertyPath: m_Texture
       value: 
-      objectReference: {fileID: 2800000, guid: 2c11d7d8d1794d54389f8c285d224951, type: 3}
+      objectReference: {fileID: 2800000, guid: 03a4bd4781637fe449ec68f779aa9f1a, type: 3}
     - target: {fileID: 8587414299095368545, guid: 50372065439595146b02ce2b411b2b37, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -956,16 +956,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8374056469137327305, guid: 50372065439595146b02ce2b411b2b37, type: 3}
       propertyPath: m_Name
-      value: VRUI-Button_Grid (2)
+      value: Button_Chest
       objectReference: {fileID: 0}
     - target: {fileID: 8478040190041550151, guid: 50372065439595146b02ce2b411b2b37, type: 3}
       propertyPath: m_Text
-      value: Social
+      value: Chest
       objectReference: {fileID: 0}
     - target: {fileID: 8478138580996785433, guid: 50372065439595146b02ce2b411b2b37, type: 3}
       propertyPath: m_Texture
       value: 
-      objectReference: {fileID: 2800000, guid: 85a061aac8249ca48aab33ab0a5ccb3a, type: 3}
+      objectReference: {fileID: 2800000, guid: 0a467aac22dc07f4db1bbe7f05b0b0d5, type: 3}
     - target: {fileID: 8587414299095368545, guid: 50372065439595146b02ce2b411b2b37, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1066,16 +1066,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8374056469137327305, guid: 50372065439595146b02ce2b411b2b37, type: 3}
       propertyPath: m_Name
-      value: VRUI-Button_Grid (5)
+      value: Button_Box
       objectReference: {fileID: 0}
     - target: {fileID: 8478040190041550151, guid: 50372065439595146b02ce2b411b2b37, type: 3}
       propertyPath: m_Text
-      value: Security
+      value: Box
       objectReference: {fileID: 0}
     - target: {fileID: 8478138580996785433, guid: 50372065439595146b02ce2b411b2b37, type: 3}
       propertyPath: m_Texture
       value: 
-      objectReference: {fileID: 2800000, guid: a7c1f19e54e50a244adc48c7c55499e0, type: 3}
+      objectReference: {fileID: 2800000, guid: 1103975e48d6b1246be87927b10e7fed, type: 3}
     - target: {fileID: 8587414299095368545, guid: 50372065439595146b02ce2b411b2b37, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1176,12 +1176,20 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8374056469137327305, guid: 50372065439595146b02ce2b411b2b37, type: 3}
       propertyPath: m_Name
-      value: VRUI-Button_Grid
+      value: Button_Well
       objectReference: {fileID: 0}
     - target: {fileID: 8477977471772456861, guid: 50372065439595146b02ce2b411b2b37, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: ee664e149de442c4794a92b42b8bbe4d, type: 3}
+    - target: {fileID: 8478040190041550151, guid: 50372065439595146b02ce2b411b2b37, type: 3}
+      propertyPath: m_Text
+      value: Well
+      objectReference: {fileID: 0}
+    - target: {fileID: 8478138580996785433, guid: 50372065439595146b02ce2b411b2b37, type: 3}
+      propertyPath: m_Texture
+      value: 
+      objectReference: {fileID: 2800000, guid: 71c978f3de2c8da49b019e98252c8bfa, type: 3}
     - target: {fileID: 8587281264484049957, guid: 50372065439595146b02ce2b411b2b37, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 2
@@ -1290,16 +1298,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8374056469137327305, guid: 50372065439595146b02ce2b411b2b37, type: 3}
       propertyPath: m_Name
-      value: VRUI-Button_Grid (8)
+      value: Button_Anvil
       objectReference: {fileID: 0}
     - target: {fileID: 8478040190041550151, guid: 50372065439595146b02ce2b411b2b37, type: 3}
       propertyPath: m_Text
-      value: Apps
+      value: Anvil
       objectReference: {fileID: 0}
     - target: {fileID: 8478138580996785433, guid: 50372065439595146b02ce2b411b2b37, type: 3}
       propertyPath: m_Texture
       value: 
-      objectReference: {fileID: 2800000, guid: 996181a51e22d804b96fd8f44fbbc390, type: 3}
+      objectReference: {fileID: 2800000, guid: f7691a4482c71f54c892800c578483c1, type: 3}
     - target: {fileID: 8587414299095368545, guid: 50372065439595146b02ce2b411b2b37, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

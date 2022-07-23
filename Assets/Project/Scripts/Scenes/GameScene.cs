@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 
 namespace ArchiEugene.Scene
@@ -10,6 +11,7 @@ namespace ArchiEugene.Scene
         {
             base.Init();
             SceneType = Define.Scene.WorldScene;
+            Managers.UserProp.InstantiateUserProps().Forget();
         }
 
         public override void Clear()

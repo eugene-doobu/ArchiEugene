@@ -1404,10 +1404,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2241296890803818257, guid: 6a6b0d3c5c80ea14eb47a09fec3a6c12, type: 3}
-      propertyPath: m_Text
-      value: UserProp
-      objectReference: {fileID: 0}
     - target: {fileID: 6116640920581697623, guid: 6a6b0d3c5c80ea14eb47a09fec3a6c12, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1431,30 +1427,6 @@ PrefabInstance:
     - target: {fileID: 6116640920581697623, guid: 6a6b0d3c5c80ea14eb47a09fec3a6c12, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6225733827457326705, guid: 6a6b0d3c5c80ea14eb47a09fec3a6c12, type: 3}
-      propertyPath: m_Text
-      value: Anvil
-      objectReference: {fileID: 0}
-    - target: {fileID: 6225757349077481007, guid: 6a6b0d3c5c80ea14eb47a09fec3a6c12, type: 3}
-      propertyPath: m_Texture
-      value: 
-      objectReference: {fileID: 2800000, guid: f7691a4482c71f54c892800c578483c1, type: 3}
-    - target: {fileID: 6339006354663766015, guid: 6a6b0d3c5c80ea14eb47a09fec3a6c12, type: 3}
-      propertyPath: m_Name
-      value: Button_Anvil
-      objectReference: {fileID: 0}
-    - target: {fileID: 6938799268427184721, guid: 6a6b0d3c5c80ea14eb47a09fec3a6c12, type: 3}
-      propertyPath: m_Texture
-      value: 
-      objectReference: {fileID: 2800000, guid: 71c978f3de2c8da49b019e98252c8bfa, type: 3}
-    - target: {fileID: 6938916278067778063, guid: 6a6b0d3c5c80ea14eb47a09fec3a6c12, type: 3}
-      propertyPath: m_Text
-      value: Well
-      objectReference: {fileID: 0}
-    - target: {fileID: 7049656002696756097, guid: 6a6b0d3c5c80ea14eb47a09fec3a6c12, type: 3}
-      propertyPath: m_Name
-      value: Button_Well
       objectReference: {fileID: 0}
     - target: {fileID: 7120024965327240233, guid: 6a6b0d3c5c80ea14eb47a09fec3a6c12, type: 3}
       propertyPath: m_AnchorMax.y
@@ -1480,90 +1452,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9005686567298678455, guid: 6a6b0d3c5c80ea14eb47a09fec3a6c12, type: 3}
-      propertyPath: m_Name
-      value: Button_Lamp
-      objectReference: {fileID: 0}
-    - target: {fileID: 9005686567490213213, guid: 6a6b0d3c5c80ea14eb47a09fec3a6c12, type: 3}
-      propertyPath: m_Name
-      value: Button_Boiler
-      objectReference: {fileID: 0}
-    - target: {fileID: 9005686567968176830, guid: 6a6b0d3c5c80ea14eb47a09fec3a6c12, type: 3}
-      propertyPath: m_Name
-      value: Button_Chair
-      objectReference: {fileID: 0}
-    - target: {fileID: 9005686568219578220, guid: 6a6b0d3c5c80ea14eb47a09fec3a6c12, type: 3}
-      propertyPath: m_Name
-      value: Button_Commode
-      objectReference: {fileID: 0}
-    - target: {fileID: 9005686568770759338, guid: 6a6b0d3c5c80ea14eb47a09fec3a6c12, type: 3}
-      propertyPath: m_Name
-      value: Button_Box
-      objectReference: {fileID: 0}
-    - target: {fileID: 9005686568871713384, guid: 6a6b0d3c5c80ea14eb47a09fec3a6c12, type: 3}
-      propertyPath: m_Name
-      value: Button_Bag
-      objectReference: {fileID: 0}
-    - target: {fileID: 9005686568988945426, guid: 6a6b0d3c5c80ea14eb47a09fec3a6c12, type: 3}
-      propertyPath: m_Name
-      value: Button_Chest
-      objectReference: {fileID: 0}
-    - target: {fileID: 9035403272202012060, guid: 6a6b0d3c5c80ea14eb47a09fec3a6c12, type: 3}
-      propertyPath: m_Text
-      value: Chest
-      objectReference: {fileID: 0}
-    - target: {fileID: 9035403272253191142, guid: 6a6b0d3c5c80ea14eb47a09fec3a6c12, type: 3}
-      propertyPath: m_Text
-      value: Bag
-      objectReference: {fileID: 0}
-    - target: {fileID: 9035403272957002532, guid: 6a6b0d3c5c80ea14eb47a09fec3a6c12, type: 3}
-      propertyPath: m_Text
-      value: Box
-      objectReference: {fileID: 0}
-    - target: {fileID: 9035403273228030768, guid: 6a6b0d3c5c80ea14eb47a09fec3a6c12, type: 3}
-      propertyPath: m_Text
-      value: Chair
-      objectReference: {fileID: 0}
-    - target: {fileID: 9035403273446319842, guid: 6a6b0d3c5c80ea14eb47a09fec3a6c12, type: 3}
-      propertyPath: m_Text
-      value: Commode
-      objectReference: {fileID: 0}
-    - target: {fileID: 9035403273658809555, guid: 6a6b0d3c5c80ea14eb47a09fec3a6c12, type: 3}
-      propertyPath: m_Text
-      value: Boiler
-      objectReference: {fileID: 0}
-    - target: {fileID: 9035403273901659961, guid: 6a6b0d3c5c80ea14eb47a09fec3a6c12, type: 3}
-      propertyPath: m_Text
-      value: Lamp
-      objectReference: {fileID: 0}
-    - target: {fileID: 9035445549950610882, guid: 6a6b0d3c5c80ea14eb47a09fec3a6c12, type: 3}
-      propertyPath: m_Texture
-      value: 
-      objectReference: {fileID: 2800000, guid: 0a467aac22dc07f4db1bbe7f05b0b0d5, type: 3}
-    - target: {fileID: 9035445550068915128, guid: 6a6b0d3c5c80ea14eb47a09fec3a6c12, type: 3}
-      propertyPath: m_Texture
-      value: 
-      objectReference: {fileID: 2800000, guid: 03a4bd4781637fe449ec68f779aa9f1a, type: 3}
-    - target: {fileID: 9035445550168763258, guid: 6a6b0d3c5c80ea14eb47a09fec3a6c12, type: 3}
-      propertyPath: m_Texture
-      value: 
-      objectReference: {fileID: 2800000, guid: 1103975e48d6b1246be87927b10e7fed, type: 3}
-    - target: {fileID: 9035445550720945852, guid: 6a6b0d3c5c80ea14eb47a09fec3a6c12, type: 3}
-      propertyPath: m_Texture
-      value: 
-      objectReference: {fileID: 2800000, guid: 8c040f86f02308b4fae6c921f505b364, type: 3}
-    - target: {fileID: 9035445550972468078, guid: 6a6b0d3c5c80ea14eb47a09fec3a6c12, type: 3}
-      propertyPath: m_Texture
-      value: 
-      objectReference: {fileID: 2800000, guid: 167417864dd104a4ab9fa60ecd4f1277, type: 3}
-    - target: {fileID: 9035445551472432269, guid: 6a6b0d3c5c80ea14eb47a09fec3a6c12, type: 3}
-      propertyPath: m_Texture
-      value: 
-      objectReference: {fileID: 2800000, guid: a75e94a0d21895c48a60a91d0735535d, type: 3}
-    - target: {fileID: 9035445551650258791, guid: 6a6b0d3c5c80ea14eb47a09fec3a6c12, type: 3}
-      propertyPath: m_Texture
-      value: 
-      objectReference: {fileID: 2800000, guid: 622b623f3b781a04f93a8f3bb451f7b0, type: 3}
     - target: {fileID: 9214540806930660630, guid: 6a6b0d3c5c80ea14eb47a09fec3a6c12, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
