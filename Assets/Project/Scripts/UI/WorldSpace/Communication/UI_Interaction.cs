@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using ArchiEugene.Communication;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -45,7 +46,7 @@ namespace ArchiEugene.UI
             _emailButton = GetButton((int) Buttons.Button_Email);
             
             _npcInfoButton.onClick.AddListener(() => { SetActiveNpcTalk(UINpcInfo.gameObject.activeSelf); });
-            UINpcInfo.SetNpcInfoText(_npcType);
+            UINpcInfo.SetNpcInfoText(_npcType).Forget();
             
             UINpcTalk.IsParentInitSuccess = true;
         }
@@ -91,7 +92,7 @@ namespace ArchiEugene.UI
         public void SetNpc(NpcType npcType)
         {
             _npcType = npcType;
-            UINpcInfo.SetNpcInfoText(_npcType);
+            UINpcInfo.SetNpcInfoText(_npcType).Forget();
         }
     }
 }
