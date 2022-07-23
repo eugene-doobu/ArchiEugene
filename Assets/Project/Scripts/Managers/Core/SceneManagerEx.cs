@@ -25,10 +25,9 @@ namespace ArchiEugene.Scene
 
         public void Clear()
         {
-            CurrentScene.Clear();
+            if(CurrentScene != null)
+                CurrentScene.Clear();
         }
-        
-        
     }
 }
 

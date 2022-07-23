@@ -48,9 +48,10 @@ namespace ArchiEugene.Azure
             if (response.IsError)
             {
                 Debug.Log($"{response.ErrorMessage} Error putting blob:{response.Content}");
+                Managers.UserProp.InitUserPropData(string.Empty);
                 return;
             }
-            Managers.UserProp.InitUserPropData();
+            Managers.UserProp.InitUserPropData(response.Content);
             Debug.Log($"GetUserPropDataComplete\n---\n{response.Content}");
         }
 

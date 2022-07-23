@@ -16,7 +16,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 22
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &3295435815240693738
 Transform:
@@ -97,7 +97,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 22
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &2848654032249698009
 Transform:
@@ -181,7 +181,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 22
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &6342687675488634542
 Transform:
@@ -301,4 +301,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d55b3a7324afda148997fea00ed70fda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <Index>k__BackingField: 0
   <PropName>k__BackingField: Box

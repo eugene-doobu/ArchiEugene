@@ -20,14 +20,14 @@ namespace ArchiEugene
             
         }
 
-        public Loader LoadJson<Loader, Key, Value>(string path) where Loader : ILoader<Key, Value>
+        public TLoader LoadJson<TLoader, TKey, TValue>(string path) where TLoader : ILoader<TKey, TValue>
         {
             TextAsset textAsset = Managers.Resource.Load<TextAsset>($"Data/{path}");
             if (ReferenceEquals(textAsset, null)) return default;
-            return JsonConvert.DeserializeObject<Loader>(textAsset.text);
+            return JsonConvert.DeserializeObject<TLoader>(textAsset.text);
         }
 
-        public Loader LoadPersistentJson<Loader, Key, Value>(string path) where Loader : ILoader<Key, Value>
+        public TLoader LoadPersistentJson<TLoader, TKey, TValue>(string path) where TLoader : ILoader<TKey, TValue>
         {
             string fullPath = $"{Application.persistentDataPath}/Data/{path}.json";
 
@@ -36,7 +36,12 @@ namespace ArchiEugene
             
             string text = File.ReadAllText(fullPath);
             if (text == string.Empty) return default;
-            return JsonConvert.DeserializeObject<Loader>(text);
+            return JsonConvert.DeserializeObject<TLoader>(text);
+        }
+
+        public TLoader LoadString<TLoader, TKey, TValue>(string content) where TLoader : ILoader<TKey, TValue>
+        {
+            return JsonConvert.DeserializeObject<TLoader>(content);
         }
 
         [Obsolete("Azure Storage를 사용해주세요")]

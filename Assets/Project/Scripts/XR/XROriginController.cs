@@ -117,6 +117,7 @@ namespace ArchiEugene.XRToolkit
             Vector3 capsuleCenter = transform.InverseTransformPoint(_origin.Camera.transform.position);
             _character.center = new Vector3(capsuleCenter.x, _character.height/2 + _character.skinWidth , capsuleCenter.z);
         }
+        
         private bool CheckIfGrounded()
         {
             Vector3 rayStart = _tr.TransformPoint(_character.center);

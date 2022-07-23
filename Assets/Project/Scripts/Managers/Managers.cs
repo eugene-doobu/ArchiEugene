@@ -1,7 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using ArchiEugene.Azure;
 using ArchiEugene.Communication;
+using ArchiEugene.Emotion;
 using UnityEngine;
 using ArchiEugene.UI;
 using ArchiEugene.Resources;
@@ -19,9 +21,11 @@ namespace ArchiEugene
 		#region Contents
 		private CommunicationManager _communication = new CommunicationManager();
 		private UserPropManager _userProp = new UserPropManager();
+		private EmotionManager _emotion = new EmotionManager();
 
 		public static CommunicationManager Communication => Instance._communication;
 		public static UserPropManager UserProp => Instance._userProp;
+		public static EmotionManager Emotion => Instance._emotion;
 		#endregion
 
 		#region Core

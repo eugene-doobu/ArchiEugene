@@ -2,6 +2,7 @@ using ArchiEugene.Communication;
 using DG.Tweening;
 using TMPro;
 using Cysharp.Text;
+using Cysharp.Threading.Tasks;
 
 namespace ArchiEugene.UI
 {
@@ -32,8 +33,11 @@ namespace ArchiEugene.UI
             gameObject.SetActive(false);
         }
 
-        public void SetNpcInfoText(NpcType npcType)
+        public async UniTask SetNpcInfoText(NpcType npcType)
         {
+            while (_npcInfoText == null)
+                await UniTask.Yield();
+            
             var npcInfo = Managers.Communication.GetNpcInfo(npcType);
             
             var sb = ZString.CreateStringBuilder();
