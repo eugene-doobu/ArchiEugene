@@ -18,7 +18,7 @@ namespace ArchiEugene.Scene
         private async UniTask RefreshScene()
         {
             gameObject.SetActive(false);
-            await UniTask.Delay(System.TimeSpan.FromSeconds(0.5f));
+            await UniTask.Delay(System.TimeSpan.FromSeconds(1.5f));
             gameObject.SetActive(true);
         }
 
