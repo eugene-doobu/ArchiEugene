@@ -46,8 +46,6 @@ namespace ArchiEugene.UI
             _emailButton = GetButton((int) Buttons.Button_Email);
             
             _npcInfoButton.onClick.AddListener(() => { SetActiveNpcTalk(UINpcInfo.gameObject.activeSelf); });
-            UINpcInfo.SetNpcInfoText(_npcType).Forget();
-            
             UINpcTalk.IsParentInitSuccess = true;
         }
 
