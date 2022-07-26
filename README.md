@@ -1,5 +1,5 @@
 # KnouVerse
-비밀 프로젝트
+2022 방송통신대학교 소프트웨어 경진대회 프로젝트
 
 Target Device: Oculus Quest 2<br>
 Proeject Version: 2020.3.17f1<br>
