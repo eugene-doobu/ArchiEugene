@@ -1,6 +1,8 @@
 # KnouVerse
 2022 방송통신대학교 소프트웨어 경진대회 프로젝트
 
+은상 수상
+
 https://www.youtube.com/watch?v=Ol_7fd2x3lM
 
 Target Device: Oculus Quest 2<br>
